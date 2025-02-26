@@ -1,3 +1,9 @@
+/*
+Finishing instructions:
+Should be cut and add connectoris on top of the legs
+CutZ = legsZ = 23
+Connectors length should be: specialBottomForCuttingLegsZ = 8
+*/
 // The resolution variables:
 $fa = 1;
 $fs = 0.4;
@@ -6,11 +12,11 @@ $fs = 0.4;
 mainBodyX = 230;
 mainBodyY = 80;
 mainBoxBodyZ = 150;
-legsZ = 20;
+legsZ = 23;
 legThicknessY = 15;
 legOneOffsetY = 8; // Distance from y=0 till the start of the first leg
 legTwoOffsetY = mainBodyY - (legOneOffsetY + legThicknessY); // Distance from y=0 till the start of 2nd leg
-specialBottomForCuttingLegsZ = 20; 
+specialBottomForCuttingLegsZ = 8; 
 mainBodyZ = mainBoxBodyZ + legsZ + specialBottomForCuttingLegsZ;
 wallThikness = 2;
 bottomWallZ = wallThikness + specialBottomForCuttingLegsZ;
