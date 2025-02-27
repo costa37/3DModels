@@ -4,6 +4,9 @@ Should be cut and add connectoris on top of the legs
 CutZ = legsZ = 23
 Connectors length should be: specialBottomForCuttingLegsZ = 8
 */
+
+// TODO: Distance (the space/gap) between the legs should be 22
+
 // The resolution variables:
 $fa = 1;
 $fs = 0.4;
