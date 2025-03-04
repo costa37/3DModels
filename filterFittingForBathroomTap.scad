@@ -12,8 +12,8 @@ $fs = 0.4;
 // Main dimension vareables
 
 z = 10.1;
-outsideD = 16.3;
-insideD = 14;
+outsideD = 16.5; // Added 0.2 to outsideD and insideD for better fitting (didn't fit before)
+insideD = 14.2;
 
 // Calculated vareables
 
