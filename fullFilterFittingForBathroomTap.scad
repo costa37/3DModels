@@ -1,3 +1,4 @@
+// threaded_length = 6 ; thread radius18.9
 use <threads.scad>  // Ensure you have this library installed
 
 // Tube dimensions
