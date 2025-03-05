@@ -1,8 +1,11 @@
 /*
+clothespin
+**********************
+
 Finishing instructions:
 Should be cut and add connectoris on top of the legs
 CutZ = legsZ = 23
-Connectors length should be: specialBottomForCuttingLegsZ = 8
+Connectors length should be: specialBottomForCuttingLegsZ = 8 = Depth Ratio & size = 8
 */
 
 // The resolution variables:
