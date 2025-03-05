@@ -18,7 +18,7 @@ module threaded_tube() {
         
         // Internal threading (for half the length)
         translate([0, 0, -length / 2])
-            metric_thread(d=inside_radius * 2, pitch=thread_pitch, length=threaded_length);
+            ScrewThread(d=inside_radius * 2, pitch=thread_pitch, length=threaded_length);
     }
 }
 
