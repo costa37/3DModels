@@ -34,15 +34,15 @@ module threaded_tube() {
         //     cylinder(h=length + 1, r=inside_radius_threded);
 
         // Creating the hollow space for the part that will have internal threading
-        translate([0, 0, non_threaded_length - 2])  // Position at one end
+        translate([0, 0, non_threaded_length])  // Position at one end
             cylinder(h=length + 2, r=inside_radius_threded);
         
         // Creating the hollow space for the part that without internal threading
-        translate([0, 0, -2])  // Position at one end
-            cylinder(h=non_threaded_length + 2, r=inside_radius_non_threded);
+        translate([0, 0, - 4])  // Position at one end
+            cylinder(h=non_threaded_length * 2, r=inside_radius_non_threded);
         
         // Internal threading (subtract to create threads)
-        translate([0, 0, length / 2 - threaded_length])  // Position at one end
+        translate([0, 0, non_threaded_length])  // Position at one end
             ScrewThread(outer_diam=inside_radius_threded * 2,  
                         height=threaded_length, 
                         pitch=thread_pitch);
