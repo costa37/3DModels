@@ -16,8 +16,8 @@ inside_radius_non_threded = 14.4 / 2;
 length = 20;
 
 // Thread settings
-threaded_length = 6;  // Only 6mm of internal thread on one side
-thread_pitch = 1;   // Adjust as needed
+threaded_length = 8;  
+thread_pitch = 0.5;   // Adjust as needed
 
 // Calculated vareables
 

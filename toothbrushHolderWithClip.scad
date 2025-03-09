@@ -15,7 +15,7 @@ hightZ = 40;
 holderGapX = 5; //The place that will on top of the metal bar
 toothbrushHolderLengthWidth = 20;
 wallThikness = 2;
-holeForToothbrushD = 10;
+holeForToothbrushD = 13;
 
 // Calculated vareables
 
