@@ -13,9 +13,9 @@ $fs = 0.4;
 
 hightZ = 40;
 holderGapX = 5; //The place that will on top of the metal bar
-toothbrushHolderLengthWidth = 20;
+toothbrushHolderLengthWidth = 30;
 wallThikness = 2;
-holeForToothbrushD = 13;
+holeForToothbrushD = 19;
 
 // Calculated vareables
 
