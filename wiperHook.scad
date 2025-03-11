@@ -10,12 +10,12 @@ $fa = 1;
 $fs = 0.4;
 
 // Main dimension variables
-hookWidthZ = 1.5;
+hookWidthZ = 15;
 loopRibLength = 20;
-hookRibOne = 50;
+hookRibOne = 40;
 hookRibTwo = 30;
 hookRibThree = 10;
-wallThikness = 1;
+wallThikness = 1.5;
 
 // Calculated vareables
 
