@@ -18,12 +18,12 @@ inside_radius_threded = 18.9 / 2;
 inside_radius_non_threded = (20 + 0.3) / 2; //Added 0.3 for less tightness
 inside_radius_top = (20.7 + 0.3) / 2; //Added 0.3 for less tightness
 
-// lengh of threated part = 6; hight of standart foset filter = 11.1 in the buttom part and 1.2 in the top part (threaded part); lenght of gascet = 0.25
+// lengh of threated part = 6; hight of standart foset filter = 11.1 in the buttom part and 1.2 in the top part (threaded part); lenght of gasket = 0.25
 buttom_part_hight = 11.1;
-top_part_hight_non_threaded = 1.2; // *********************TODO********************* Cut this hight with inside_radius_top
+top_part_hight_non_threaded = 1.2 + 0.25; // 0.25 for the gasket that has the same diameter as a top part of the filter // *********************TODO********************* Cut this hight with inside_radius_top
 
 // Thread settings
-threaded_hight = 7.45;  
+threaded_hight = 6;  
 thread_pitch = 0.5;   // Adjust as needed
 thread_tolerance = 1;
 
