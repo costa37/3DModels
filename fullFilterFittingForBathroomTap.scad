@@ -29,7 +29,7 @@ thread_tolerance = 1;
 
 // Calculated vareables
 hight = buttom_part_hight + threaded_hight + top_part_hight_non_threaded;
-outside_radius = inside_radius_threded + 2;
+outside_radius = max(inside_radius_threded, inside_radius_non_threded, inside_radius_top) + 2;
 non_threaded_hight = hight - threaded_hight;
 
 module threaded_tube() {
