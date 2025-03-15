@@ -10,7 +10,7 @@ fullFilterFittingForBathroomTap
 
 // Resolution variables
 $fa = 1;    
-$fs = 0.4;
+$fs = 0.05;
 
 // Main dimension variables
 
@@ -20,12 +20,12 @@ inside_radius_top = (20.7 + 0.3) / 2; //Added 0.3 for less tightness
 
 // lengh of threated part = 6; hight of standart foset filter = 11.1 in the buttom part and 1.2 in the top part (threaded part); lenght of gasket = 0.25
 buttom_part_hight = 11.1;
-top_part_hight_non_threaded = 1.2 + 0.25; // 0.25 for the gasket that has the same diameter as a top part of the filter // *********************TODO********************* Cut this hight with inside_radius_top
+top_part_hight_non_threaded = 1.2 + 0.25 - 0.01; // 0.25 for the gasket that has the same diameter as a top part of the filter, 0.01 removed for tighter feat
 
 // Thread settings
 threaded_hight = 6;  
 thread_pitch = 0.5;   // Adjust as needed
-thread_tolerance = 1;
+thread_tolerance = 0.2;  // Adjust as needed
 
 // Calculated vareables
 hight = buttom_part_hight + threaded_hight + top_part_hight_non_threaded;
@@ -41,18 +41,26 @@ module threaded_tube() {
         translate([0, 0, non_threaded_hight])  // Position at one end
             cylinder(h=hight + 2, r=inside_radius_threded);
         
-        // Creating the hollow space for the part that without internal threading
+        // Creating the hollow space for the buttom part that without internal threading
         translate([0, 0, - 4])  // Position at one end
             cylinder(h=non_threaded_hight * 2, r=inside_radius_non_threded);
         
-        // Internal threading (subtract to create threads)
-        translate([0, 0, non_threaded_hight])  // Position at one end
-            ScrewThread(outer_diam=inside_radius_threded * 2,  
-                        height=threaded_hight, 
+        // Creating the hollow space for the top part (without threading)
+        translate([0, 0, buttom_part_hight])  // Position at one end
+            cylinder(h=top_part_hight_non_threaded, r=inside_radius_top);
+    }
+}
+
+module add_threads(){
+    // Internal threading (subtract to create threads)
+        translate([0, 0, non_threaded_hight + top_part_hight_non_threaded])
+            ScrewThread(inner_diam=(inside_radius_threded - thread_tolerance) * 2,
+                        // outer_diam=inside_radius_threded * 2,
+                        height=threaded_hight,
                         pitch=thread_pitch,
                         tolerance = thread_tolerance);
-    }
 }
 
 // Generate the hollow tube with internal threads on one side
 threaded_tube();
+add_threads();
