@@ -1,4 +1,4 @@
-use <threads.scad>  // Ensure you have this library installed
+use <libraries/threads.scad>  // Ensure you have this library installed
 
 /*
 
