@@ -1,4 +1,4 @@
-use <libraries/threads.scad>  // Ensure you have this library installed
+use <libraries/threads-library-by-cuiso-v1.scad>;
 
 /*
 
@@ -52,15 +52,14 @@ module threaded_tube() {
 }
 
 module add_threads(){
-    // Internal threading (subtract to create threads)
-        translate([0, 0, non_threaded_hight + top_part_hight_non_threaded])
-            ScrewThread(inner_diam=(inside_radius_threded - thread_tolerance) * 2,
-                        // outer_diam=inside_radius_threded * 2,
-                        height=threaded_hight,
-                        pitch=thread_pitch,
-                        tolerance = thread_tolerance);
+    // Create threads 
+    translate([0, 0, non_threaded_hight + top_part_hight_non_threaded])
+        thread_for_nut_fullparm(diameter=inside_radius_threded * 2, length=threaded_hight, pitch=thread_pitch);
 }
 
 // Generate the hollow tube with internal threads on one side
-threaded_tube();
-add_threads();
+union(){
+    threaded_tube();
+    add_threads();
+}
+
