@@ -14,52 +14,41 @@ $fs = 0.05;
 
 // Main dimension variables
 
-inside_radius_threded = 18.9 / 2;
-inside_radius_non_threded = (20 + 0.3) / 2; //Added 0.3 for less tightness
-inside_radius_top = (20.7 + 0.3) / 2; //Added 0.3 for less tightness
+// Tube inside diameters (works only if filter_d < gasket_d > threaded_d ) - Three parts: buttom part without threads, middle part for the gasket and the head of the filter and uper part with threads
+filter_d = 20 + 0.3; //Added 0.3 for less tightness
+gasket_d = 20.7 + 0.3; //Added 0.3 for less tightness
+threaded_d = 18.9;
 
-// lengh of threated part = 6; hight of standart foset filter = 11.1 in the buttom part and 1.2 in the top part (threaded part); lenght of gasket = 0.25
-buttom_part_hight = 11.1;
-top_part_hight_non_threaded = 1.2 + 0.25 - 0.01; // 0.25 for the gasket that has the same diameter as a top part of the filter, 0.01 removed for tighter feat
+// Tube hight for each part
+filter_h = 11.1; // The hight of the filter
+gasket_h = 1.2 + 0.25 - 0.01; // The hight of the gasket and filter head - 0.25 for the gasket that has the same diameter as a top part of the filter, 0.01 removed for tighter feat
+threaded_h = 6; // The hight of the threaded part 
 
-// Thread settings
-threaded_hight = 6;  
+// Settings for the threads
 thread_pitch = 0.5;   // Adjust as needed
-thread_tolerance = 0.2;  // Adjust as needed
 
-// Calculated vareables
-hight = buttom_part_hight + threaded_hight + top_part_hight_non_threaded;
-outside_radius = max(inside_radius_threded, inside_radius_non_threded, inside_radius_top) + 2;
-non_threaded_hight = hight - threaded_hight;
+// Calcullations
+outside_d = max(filter_d, gasket_d, threaded_d) + 2; // The outside diameter of the tube
+fitting_h = filter_h + gasket_h + threaded_h;
+threads_start_h = filter_h + gasket_h;
+thread_module_length = threaded_h + (gasket_h / 2) + 2;
 
-module threaded_tube() {
-    difference() {
-        // Outer tube
-        cylinder(h=hight, r=outside_radius);
-
-        // Creating the hollow space for the part that will have internal threading
-        translate([0, 0, non_threaded_hight])  // Position at one end
-            cylinder(h=hight + 2, r=inside_radius_threded);
+module fitting(){
+    difference(){
+        cylinder(d = outside_d, h = fitting_h);
         
-        // Creating the hollow space for the buttom part that without internal threading
-        translate([0, 0, - 4])  // Position at one end
-            cylinder(h=non_threaded_hight * 2, r=inside_radius_non_threded);
+        // Openning the filter tube
+        translate([0, 0, -2])
+            cylinder(d = filter_d, h = filter_h + (gasket_h / 2) + 2);
         
-        // Creating the hollow space for the top part (without threading)
-        translate([0, 0, buttom_part_hight])  // Position at one end
-            cylinder(h=top_part_hight_non_threaded, r=inside_radius_top);
+        // Openning the gasket tube
+        translate([0, 0, filter_h])
+            cylinder(d = gasket_d, h = gasket_h);
+        
+        // Adding threads and openning the tube 
+        translate([0, 0, threads_start_h - (gasket_h / 2)])
+            thread_for_nut_fullparm(diameter = threaded_d, length = thread_module_length, pitch = thread_pitch);
     }
 }
 
-module add_threads(){
-    // Create threads 
-    translate([0, 0, non_threaded_hight + top_part_hight_non_threaded])
-        thread_for_nut_fullparm(diameter=inside_radius_threded * 2, length=threaded_hight, pitch=thread_pitch);
-}
-
-// Generate the hollow tube with internal threads on one side
-union(){
-    threaded_tube();
-    add_threads();
-}
-
+fitting();
