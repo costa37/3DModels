@@ -42,18 +42,19 @@ module filter_fitting(){
         translate([0, 0, -2])
             cylinder(d = filter_d, h = filter_h + (gasket_h / 2) + 2);
         
-        // Openning the gasket tube
+        // Openning the gasket tube *****TODO: should be extended to include threaded_d as well*****
         translate([0, 0, filter_h])
-            cylinder(d = gasket_d, h = gasket_h);
-        
-        // Adding threads and openning the tube 
-        translate([0, 0, threads_start_h - (gasket_h / 2)])
-            thread_for_nut_fullparm(diameter = threaded_d, length = thread_module_length, pitch = thread_pitch);
+            thread_for_nut_fullparm(diameter = gasket_d, length = gasket_h + threaded_h + 1, pitch = thread_pitch);
     }
 }
 
 module tap_fitting(){
-
+    difference(){
+        translate([outside_d * 1.2, 0, 0])
+            thread_for_screw_fullparm(diameter = gasket_d, length = threaded_h, pitch = thread_pitch);
+        translate([outside_d * 1.2, 0, - 1])
+            thread_for_nut_fullparm(diameter = threaded_d, length = threaded_h + 2, pitch = thread_pitch);
+    }
 }
 
 // Calliing for the needed modules
