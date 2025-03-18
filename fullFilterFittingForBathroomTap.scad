@@ -3,6 +3,7 @@ use <libraries/threads-library-by-cuiso-v1.scad>;
 /*
 
 V2.0 - Changed the filter to regular, store buy filter (iso for specially thin from Ikea)
+    Important Note: In case that the filter has larger diameter then of the tap additional fitting will be require to be put on the tap before scrowing the filter fitting on top of it
 
 fullFilterFittingForBathroomTap
 ****************************************
@@ -14,7 +15,7 @@ $fs = 0.05;
 
 // Main dimension variables
 
-// Tube inside diameters (works only if filter_d < gasket_d > threaded_d ) - Three parts: buttom part without threads, middle part for the gasket and the head of the filter and uper part with threads
+// Tube inside diameters - Three parts: buttom part without threads, middle part for the gasket and the head of the filter and uper part with threads
 filter_d = 20 + 0.3; //Added 0.3 for less tightness
 gasket_d = 20.7 + 0.3; //Added 0.3 for less tightness
 threaded_d = 18.9;
@@ -33,7 +34,7 @@ fitting_h = filter_h + gasket_h + threaded_h;
 threads_start_h = filter_h + gasket_h;
 thread_module_length = threaded_h + (gasket_h / 2) + 2;
 
-module fitting(){
+module filter_fitting(){
     difference(){
         cylinder(d = outside_d, h = fitting_h);
         
@@ -51,4 +52,11 @@ module fitting(){
     }
 }
 
-fitting();
+module tap_fitting(){
+
+}
+
+// Calliing for the needed modules
+filter_fitting();
+tap_fitting();
+
