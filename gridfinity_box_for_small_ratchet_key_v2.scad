@@ -33,6 +33,11 @@ gridfinity_box_x = 125.5;
 gridfinity_box_y = 41.5;
 gridfinity_box_z = 28.0;
 
+// Ratchet key actual measurements
+ratchet_key_actual_length_x = 103; // TODO: update the numbers
+ratchet_key_actual_width_y = 10; // TODO: update the numbers
+ratchet_key_actual_depth_z = 15; // TODO: update the numbers
+
 // Ratchet key cutout
 ratchet_key_length_x = 103;
 ratchet_key_width_y = 10;
@@ -41,11 +46,11 @@ ratchet_key_start_x = 11;
 ratchet_key_start_y = gridfinity_box_y - ratchet_key_width_y - 14;
 
 // Cutout for the fingers
-fingers_cutout_length_x = 15 / 2;
-fingers_cutout_width_y = ratchet_key_width_y + 18;
-fingers_cutout_depth_z = 8;
+fingers_cutout_width_x = 20;
+fingers_cutout_length_y = ratchet_key_width_y + 21;
+fingers_cutout_depth_z = ratchet_key_depth_z / 2;
 fingers_cutout_start_x = ratchet_key_length_x / 2;
-fingers_cutout_start_y = ratchet_key_start_y - 10;
+fingers_cutout_start_y = ratchet_key_start_y - 12;
 
 // Bits cutout (use cylinder(h=20, r=10, $fn=6);)
 bits_diameter = 7.6; // ¼-inch (tested)
@@ -61,15 +66,15 @@ module gridfinity_box_for_small_ratchet_key() {
         union(){
             // Ratchet key cutout
             translate([ratchet_key_start_x, ratchet_key_start_y, gridfinity_box_z - ratchet_key_depth_z])
-            #minkowski(){ // For making rounded corners
-                #cube([ratchet_key_length_x, ratchet_key_width_y, ratchet_key_depth_z]);
+            minkowski(){ // For making rounded corners
+                cube([ratchet_key_length_x, ratchet_key_width_y, ratchet_key_depth_z + 1]);
                 sphere(2);
             }
             
         // Cutout for the fingers
         translate([fingers_cutout_start_x, fingers_cutout_start_y, gridfinity_box_z - fingers_cutout_depth_z])
-            #minkowski(){
-                cube([fingers_cutout_length_x, fingers_cutout_width_y, fingers_cutout_depth_z]);
+            minkowski(){
+                cube([fingers_cutout_width_x, fingers_cutout_length_y, fingers_cutout_depth_z + 1]);
                 sphere(2);
             }
         }
@@ -77,13 +82,13 @@ module gridfinity_box_for_small_ratchet_key() {
         // Bits cutout - part one
         for(i = [1 : 4]){
             translate([ratchet_key_start_x + ((i - 1) * 11), bits_start_y, gridfinity_box_z - bits_depth_z])
-                #cylinder(h=bits_depth_z, d=bits_diameter, $fn=6);
+                cylinder(h=bits_depth_z + 1, d=bits_diameter, $fn=6);
         }
 
         // Bits cutout - part two
-        for(i = [1 : 5]){
-            translate([fingers_cutout_start_x +fingers_cutout_length_x + bits_diameter + ((i - 1) * 11), bits_start_y, gridfinity_box_z - bits_depth_z])
-                #cylinder(h=bits_depth_z, d=bits_diameter, $fn=6);
+        for(i = [1 : 4]){
+            translate([fingers_cutout_start_x +fingers_cutout_width_x + bits_diameter + ((i - 1) * 11), bits_start_y, gridfinity_box_z - bits_depth_z])
+                cylinder(h=bits_depth_z + 1, d=bits_diameter, $fn=6);
         }
         
     }
