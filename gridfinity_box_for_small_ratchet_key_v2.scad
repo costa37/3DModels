@@ -12,7 +12,7 @@ gridfinity_box_for_small_ratchet_key_v2
     Note: V2: Extender place changed to vertical orientation similar to bits
               The base gridfinity box change to smaller size 3x1
 
-Based on .stl file for gridfinity type box, creted using https://gridfinitygenerator.com
+Based on .stl file for gridfinity type box, creted using https://gridfinity.perplexinglabs.com/
 
 Description:
 *************    
@@ -28,10 +28,10 @@ $fa = 1;
 $fs = 0.05;
 
 // STL file
-gridfinity_box_path = "stl_files/box_for_cutout-3-1-4.stl"; 
-gridfinity_box_x = 126;
-gridfinity_box_y = 42;
-gridfinity_box_z = 32.4 - 4.4 + 0.2; //Max cutout 21mm
+gridfinity_box_path = "stl_files/gridfinity_solid_3x1x4_box.stl"; 
+gridfinity_box_x = 125.5;
+gridfinity_box_y = 41.5;
+gridfinity_box_z = 28.0;
 
 // Ratchet key cutout
 ratchet_key_length_x = 103;
@@ -55,13 +55,14 @@ bits_start_y = fingers_cutout_start_y + 2;
 module gridfinity_box_for_small_ratchet_key() {
     difference() {
         // Importing the STL file
-        translate([63, 42 / 2, 0])
-            import(gridfinity_box_path);
+        translate([gridfinity_box_x / 2, gridfinity_box_y / 2, 0])
+            rotate(90)
+                import(gridfinity_box_path);
         union(){
             // Ratchet key cutout
-        translate([ratchet_key_start_x, ratchet_key_start_y, gridfinity_box_z - ratchet_key_depth_z])
+            translate([ratchet_key_start_x, ratchet_key_start_y, gridfinity_box_z - ratchet_key_depth_z])
             #minkowski(){ // For making rounded corners
-                cube([ratchet_key_length_x, ratchet_key_width_y, ratchet_key_depth_z]);
+                #cube([ratchet_key_length_x, ratchet_key_width_y, ratchet_key_depth_z]);
                 sphere(2);
             }
             
@@ -87,6 +88,5 @@ module gridfinity_box_for_small_ratchet_key() {
         
     }
 }
-
 
 gridfinity_box_for_small_ratchet_key();

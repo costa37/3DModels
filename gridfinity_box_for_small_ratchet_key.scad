@@ -10,7 +10,7 @@ Project name:
 
 gridfinity_box_for_small_ratchet_key
 
-Based on .stl file for gridfinity type box, creted using https://gridfinitygenerator.com
+Based on .stl file for gridfinity type box, creted using 
 
 Description:
 *************    
@@ -26,7 +26,7 @@ $fa = 1;
 $fs = 0.05;
 
 // STL file
-gridfinity_box_path = "stl_files/box_for_cutout-3-2-4.stl";
+gridfinity_box_path = "stl_files/need_to_add_new_stl_file.stl";
 gridfinity_box_x = 126;
 gridfinity_box_y = 84;
 gridfinity_box_z = 32.4 - 4.4 + 0.2;
