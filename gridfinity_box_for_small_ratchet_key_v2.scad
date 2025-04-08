@@ -34,14 +34,14 @@ gridfinity_box_y = 41.5;
 gridfinity_box_z = 28.0;
 
 // Ratchet key actual measurements
-ratchet_key_actual_length_x = 103; // TODO: update the numbers
-ratchet_key_actual_width_y = 10; // TODO: update the numbers
-ratchet_key_actual_depth_z = 15; // TODO: update the numbers
+ratchet_key_actual_length_x = 101.05; // TODO: update the numbers
+ratchet_key_actual_width_y = 9.78; // TODO: update the numbers
+ratchet_key_actual_depth_z = 17.15; // TODO: update the numbers
 
 // Ratchet key cutout
-ratchet_key_length_x = 103;
-ratchet_key_width_y = 10;
-ratchet_key_depth_z = 15;
+ratchet_key_length_x = ratchet_key_actual_length_x + 2;
+ratchet_key_width_y = ratchet_key_actual_width_y + 2;
+ratchet_key_depth_z = ratchet_key_actual_depth_z;
 ratchet_key_start_x = 11;
 ratchet_key_start_y = gridfinity_box_y - ratchet_key_width_y - 14;
 
@@ -54,7 +54,7 @@ fingers_cutout_start_y = ratchet_key_start_y - 12;
 
 // Bits cutout (use cylinder(h=20, r=10, $fn=6);)
 bits_diameter = 7.6; // ¼-inch (tested)
-bits_depth_z = 9;
+bits_depth_z = 11;
 bits_start_y = fingers_cutout_start_y + 2;
 
 module gridfinity_box_for_small_ratchet_key() {
