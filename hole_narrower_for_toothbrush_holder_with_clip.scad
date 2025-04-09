@@ -18,27 +18,34 @@ $fs = 0.4;
 // Main dimension variables
 toothbrushHolderLengthWidth = 30;
 original_plate_thickness = 2; // Thickness of the original plate/wall
-current_walls_thickness = 0.5; // Thickness of current walls
+current_walls_thickness = 1; // Thickness of current walls
 holeForToothbrushD = 19;
-protection_factor = 0.1;
+protection_factor_1 = 0.2;
+protection_factor_2 = 0.3;
+protection_factor_3 = 0.4;
 
 // Calculations
-gap_between_hole_and_wall_z = (toothbrushHolderLengthWidth / 2) - (holeForToothbrushD / 2); // 1st narrower
-standart_narrower_z = (holeForToothbrushD + gap_between_hole_and_wall_z) / 6; // standart narrower
-cube_enlargment_by = current_walls_thickness + protection_factor;
+gap_between_hole_and_wall_z = (toothbrushHolderLengthWidth / 2) - (holeForToothbrushD / 2); // narrower could have been just ~5/6 (without any calculations)
 
 // Main
-module hole_narrower(hole_narrower_width_z){
+module hole_narrower(protection_factor){
+    additional_cube_thickness = current_walls_thickness + protection_factor;
     difference(){
         // Body
-        cube([original_plate_thickness + (cube_enlargment_by * 2), toothbrushHolderLengthWidth + (cube_enlargment_by * 2), hole_narrower_width_z]);
+        cube([original_plate_thickness + (additional_cube_thickness * 2), toothbrushHolderLengthWidth + (additional_cube_thickness * 2), gap_between_hole_and_wall_z]);
 
         // Hole
         translate([current_walls_thickness, current_walls_thickness, -1])
-            cube([original_plate_thickness + (protection_factor * 2), toothbrushHolderLengthWidth + (protection_factor * 2), hole_narrower_width_z + 2]);
+            cube([original_plate_thickness + (protection_factor * 2), toothbrushHolderLengthWidth + (protection_factor * 2), gap_between_hole_and_wall_z + 2]);
     }
 }
 
 // Generate the toothbrush holder with clip
-// hole_narrower(gap_between_hole_and_wall_z);
-hole_narrower(standart_narrower_z);
+for(j = [0:1]){
+    translate([0, j * toothbrushHolderLengthWidth * 1.2, 0])
+        hole_narrower(protection_factor_1);
+    translate([8, j * toothbrushHolderLengthWidth * 1.2, 0])
+        hole_narrower(protection_factor_2);
+    translate([16, j * toothbrushHolderLengthWidth * 1.2, 0])
+    hole_narrower(protection_factor_3);         
+}    
