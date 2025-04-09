@@ -20,9 +20,10 @@ toothbrushHolderLengthWidth = 30;
 original_plate_thickness = 2; // Thickness of the original plate/wall
 current_walls_thickness = 1; // Thickness of current walls
 holeForToothbrushD = 19;
-protection_factor_1 = 0.2;
-protection_factor_2 = 0.3;
-protection_factor_3 = 0.4;
+protection_factor = 0.17; // This is probably the c urrect protection factor
+// protection_factor_1 = 0.2;
+// protection_factor_2 = 0.3;
+// protection_factor_3 = 0.4;
 
 // Calculations
 gap_between_hole_and_wall_z = (toothbrushHolderLengthWidth / 2) - (holeForToothbrushD / 2); // narrower could have been just ~5/6 (without any calculations)
@@ -41,11 +42,13 @@ module hole_narrower(protection_factor){
 }
 
 // Generate the toothbrush holder with clip
-for(j = [0:1]){
-    translate([0, j * toothbrushHolderLengthWidth * 1.2, 0])
-        hole_narrower(protection_factor_1);
-    translate([8, j * toothbrushHolderLengthWidth * 1.2, 0])
-        hole_narrower(protection_factor_2);
-    translate([16, j * toothbrushHolderLengthWidth * 1.2, 0])
-    hole_narrower(protection_factor_3);         
-}    
+// for(j = [0:1]){
+//     translate([0, j * toothbrushHolderLengthWidth * 1.2, 0])
+//         hole_narrower(protection_factor_1);
+//     translate([8, j * toothbrushHolderLengthWidth * 1.2, 0])
+//         hole_narrower(protection_factor_2);
+//     translate([16, j * toothbrushHolderLengthWidth * 1.2, 0])
+//     hole_narrower(protection_factor_3);         
+// }    
+
+hole_narrower(protection_factor);
