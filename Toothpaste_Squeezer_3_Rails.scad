@@ -42,6 +42,7 @@ side_slot_width_x = 1;
 side_slot_hight_y = 6;
 
 slot_spacing_y = (cube_height_y - (2 * slot_padding_top_buttom_y)) / 3 + 3;  // spacing between openings
+echo(str("slot_spacing_y = ", slot_spacing_y));
 
 module toothpaste_squeezer() {
     difference() {
