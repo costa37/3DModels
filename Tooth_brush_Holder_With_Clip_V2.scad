@@ -26,6 +26,8 @@ With square toothbrush holder and a clip that intent to be on top of metal frame
             |         |
 
 
+Printed in PETG (for water resistance)
+
 */
 
 // Resolution variables
@@ -39,7 +41,7 @@ holderGapX = 5; //The place that will on top of the metal bar
 toothbrushHolderLengthWidth = 30;
 wallThikness = 2;
 holeForToothbrushD = 17;
-clip_opennig_gap_x = holderGapX - 3;
+clip_opennig_gap_x = holderGapX - 4.5;
 fullBodyLengthX = (wallThikness * 2) + holderGapX + toothbrushHolderLengthWidth;
 holeForToothbrushR = holeForToothbrushD / 2;
 

@@ -9,6 +9,12 @@ Project name:
 *****************
 hole_narrower_for_toothbrush_holder_with_clip
 
+Description:
+****************************************
+Making the hole for toothbrush (the tothbrash holder) adjustable, designed for Tooth_brush_Holder_With_Clip_V2.scad and Tooth_brush_Holder_With_Clip.scad
+
+Printed in PETG (for water resistance)
+
 */
 
 // Resolution variables
@@ -20,13 +26,10 @@ toothbrushHolderLengthWidth = 30;
 original_plate_thickness = 2; // Thickness of the original plate/wall
 current_walls_thickness = 1; // Thickness of current walls
 holeForToothbrushD = 19;
-protection_factor_final = 0.17; // This is probably the c urrect protection factor
-protection_factor_1 = 0.17;
-protection_factor_2 = 0.15;
-protection_factor_3 = 0.13;
+protection_factor_final = 0.10; // This is the currect protection factor
 
 // Calculations
-gap_between_hole_and_wall_z = (toothbrushHolderLengthWidth / 2) - (holeForToothbrushD / 2); // narrower could have been just ~5/6 (without any calculations)
+gap_between_hole_and_wall_z = ((toothbrushHolderLengthWidth / 2) - (holeForToothbrushD / 2)) * 1.5; // narrower could have been just ~5/6 (without any calculations)
 
 // Main
 module hole_narrower(protection_factor){
@@ -41,14 +44,5 @@ module hole_narrower(protection_factor){
     }
 }
 
-// Generate the toothbrush holder with clip
-for(j = [0:1]){
-    translate([0, j * toothbrushHolderLengthWidth * 1.2, 0])
-        hole_narrower(protection_factor_1);
-    translate([8, j * toothbrushHolderLengthWidth * 1.2, 0])
-        hole_narrower(protection_factor_2);
-    translate([16, j * toothbrushHolderLengthWidth * 1.2, 0])
-    hole_narrower(protection_factor_3);         
-}    
-
-// hole_narrower(protection_factor_final);
+// Generate the module
+hole_narrower(protection_factor_final);
