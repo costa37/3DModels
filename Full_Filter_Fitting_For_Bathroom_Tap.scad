@@ -31,42 +31,40 @@ $fs = 0.05;
 // Tube inside diameters - Three parts: buttom part without threads, middle part for the gasket and the head of the filter and uper part with threads
 filter_d = 20 + 0.3; //Added 0.3 for less tightness
 gasket_d = 20.7 + 0.3; //Added 0.3 for less tightness
-threaded_d = 18.9; // Changed from 18.9 (for better fitting with the filter part)
+threaded_d = 18.9; 
 
 // Tube hight for each part
-filter_h = 11.1; // The hight of the filter
-gasket_h = 1.2 + 0.25 - 0.01; // The hight of the gasket and filter head - 0.25 for the gasket that has the same diameter as a top part of the filter, 0.01 removed for tighter feat
-threaded_h = 7; // The hight of the threaded part (changed from 6 to accommodate more space for the gasket) 
+filter_z = 11.1; // The hight of the filter
+gasket_z = 1.2 + 0.25 - 0.01; // The hight of the gasket and filter head - 0.25 for the gasket that has the same diameter as a top part of the filter, 0.01 removed for tighter feat
+threaded_z = 7; // The hight of the threaded part (changed from 6 to accommodate more space for the gasket) 
 
 // Settings for the threads
-thread_pitch = 0.5;   // Adjust as needed
+thread_pitch = 0.5;   // The gap between each thread
 
 // Calcullations
 outside_d = max(filter_d, gasket_d, threaded_d) + 2; // The outside diameter of the tube
-fitting_h = filter_h + gasket_h + threaded_h;
-threads_start_h = filter_h + gasket_h;
-thread_module_length = threaded_h + (gasket_h / 2) + 2;
+fitting_z = filter_z + gasket_z + threaded_z;
 
 module filter_fitting(){
     difference(){
-        cylinder(d = outside_d, h = fitting_h);
+        cylinder(d = outside_d, h = fitting_z);
         
         // Openning the filter tube
         translate([0, 0, -2])
-            cylinder(d = filter_d, h = filter_h + (gasket_h / 2) + 2);
+            cylinder(d = filter_d, h = filter_z + (gasket_z / 2) + 2);
         
-        // Openning the gasket tube *****TODO: should be extended to include threaded_d as well*****
-        translate([0, 0, filter_h])
-            thread_for_nut_fullparm(diameter = gasket_d, length = gasket_h + threaded_h + 1, pitch = thread_pitch);
+        // Openning the gasket tube
+        translate([0, 0, filter_z])
+            thread_for_nut_fullparm(diameter = gasket_d, length = gasket_z + threaded_z + 1, pitch = thread_pitch);
     }
 }
 
-module tap_fitting(){
+module tap_fitting(){ // Why we are not creating a cylender first and then cutting the parts from it???
     difference(){
         translate([outside_d * 1.2, 0, 0])
-            thread_for_screw_fullparm(diameter = gasket_d + 0.15, length = threaded_h, pitch = thread_pitch);
+            thread_for_screw_fullparm(diameter = gasket_d + 0.15, length = threaded_z + 1, pitch = thread_pitch);
         translate([outside_d * 1.2, 0, - 1])
-            thread_for_nut_fullparm(diameter = threaded_d, length = threaded_h + 2, pitch = thread_pitch);
+            thread_for_nut_fullparm(diameter = threaded_d, length = threaded_z + 2, pitch = thread_pitch);
     }
 }
 
