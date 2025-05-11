@@ -31,7 +31,7 @@ $fs = 0.05;
 // Tube inside diameters - Three parts: buttom part without threads, middle part for the gasket and the head of the filter and uper part with threads
 filter_d = 20 + 0.3; //Added 0.3 for less tightness
 gasket_d = 20.7 + 0.3; //Added 0.3 for less tightness
-threaded_d = 18.95; // Changed from 18.9 (for better fitting with the filter part)
+threaded_d = 18.9; // Changed from 18.9 (for better fitting with the filter part)
 
 // Tube hight for each part
 filter_h = 11.1; // The hight of the filter
@@ -64,13 +64,13 @@ module filter_fitting(){
 module tap_fitting(){
     difference(){
         translate([outside_d * 1.2, 0, 0])
-            thread_for_screw_fullparm(diameter = gasket_d, length = threaded_h, pitch = thread_pitch);
+            thread_for_screw_fullparm(diameter = gasket_d + 0.15, length = threaded_h, pitch = thread_pitch);
         translate([outside_d * 1.2, 0, - 1])
             thread_for_nut_fullparm(diameter = threaded_d, length = threaded_h + 2, pitch = thread_pitch);
     }
 }
 
 // Calliing for the needed modules
-filter_fitting();
+// filter_fitting();
 tap_fitting();
 
