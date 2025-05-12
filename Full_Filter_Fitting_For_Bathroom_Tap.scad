@@ -50,9 +50,19 @@ threaded_d = 18.9;
 filter_z = 11.1; // The hight of the filter
 gasket_z = 1.2 + 0.25 - 0.01; // The hight of the gasket and filter head - 0.25 for the gasket that has the same diameter as a top part of the filter, 0.01 removed for tighter feat
 threaded_z = 7; // The hight of the threaded part (changed from 6 to accommodate more space for the gasket) 
+tolerance_degree = 0.4; // After testing it seems the the tollerance (used in tap_fitting) should be 0.4 (0.5 also working but too tight) 
 
+
+
+// TODO: change the pitch to standat on this diameter (could be 2 but not sure...) - because it haven't worked as good as expected (without threads it managed to work better)
 // Settings for the threads
 thread_pitch = 0.5;   // The gap between each thread
+
+
+
+
+
+
 
 // Calcullations
 outside_d = max(filter_d, gasket_d, threaded_d) + 2; // The outside diameter of the tube
