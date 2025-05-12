@@ -14,6 +14,16 @@ V2.0 - Changed the filter to regular, store buy filter (iso of special from Ikea
 Sketch:
 ****************************************
 
+        |   |      |   |
+        |   |      |   |    Threaded
+        |   |      |   |
+        | |          | |
+        | |          | |    Gasket
+        |  |        |  |    
+        |  |        |  |    
+        |  |        |  |    Filter
+        |  |        |  |    
+
 Notes:
 ****************************************
 - Important Note: In case that the filter has larger diameter then of the tap additional fitting will be require to be put on the tap before scrowing the filter fitting on top of it
@@ -28,7 +38,10 @@ $fs = 0.05;
 
 // Main dimension variables
 
-// Tube inside diameters - Three parts: buttom part without threads, middle part for the gasket and the head of the filter and uper part with threads
+// Tube inside diameters - Three parts: 
+    // Filter - buttom part without threads 
+    // Gasket - middle part for the gasket and head of the filter
+    // Threaded - uper part with threads
 filter_d = 20 + 0.3; //Added 0.3 for less tightness
 gasket_d = 20.7 + 0.3; //Added 0.3 for less tightness
 threaded_d = 18.9; 
@@ -59,10 +72,10 @@ module filter_fitting(){
     }
 }
 
-module tap_fitting(){ // Why we are not creating a cylender first and then cutting the parts from it???
+module tap_fitting(tolerance_degree){ // Why we are not creating a cylender first and then cutting the parts from it???
     difference(){
         translate([outside_d * 1.2, 0, 0])
-            thread_for_screw_fullparm(diameter = gasket_d + 0.15, length = threaded_z + 1, pitch = thread_pitch);
+            thread_for_screw_fullparm(diameter = gasket_d + tolerance_degree, length = threaded_z + 1, pitch = thread_pitch);
         translate([outside_d * 1.2, 0, - 1])
             thread_for_nut_fullparm(diameter = threaded_d, length = threaded_z + 2, pitch = thread_pitch);
     }
@@ -70,5 +83,14 @@ module tap_fitting(){ // Why we are not creating a cylender first and then cutti
 
 // Calliing for the needed modules
 // filter_fitting();
-tap_fitting();
+// tap_fitting();
 
+// Trying different sizes tap_fitting outside diameter
+// tolerance_degree_1 = 0.3;
+// tolerance_degree_2 = 0.5;
+// tolerance_degree_3 = 0.7;
+// tolerance_degree_3 = 0.9;
+for(i = [0:4]){
+    translate([gasket_d * 2 * i, 0, 0])
+        tap_fitting(0.3 + (i * 0.2));
+}
