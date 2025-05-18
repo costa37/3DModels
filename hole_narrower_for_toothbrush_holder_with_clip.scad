@@ -41,9 +41,6 @@ module hole_narrower(protection_factor){
         // Body
         translate([0, - handle_y, 0])
             cube([original_plate_thickness + (additional_cube_thickness * 2), toothbrushHolderLengthWidth + (additional_cube_thickness * 2) + (2 * handle_y), gap_between_hole_and_wall_z]);
-        translate([0, -handle_y, 0])
-            cube([original_plate_thickness + (additional_cube_thickness * 2), toothbrushHolderLengthWidth + (additional_cube_thickness * 2), gap_between_hole_and_wall_z]);
-
         // Hole
         translate([current_walls_thickness, current_walls_thickness, -1])
             cube([original_plate_thickness + (protection_factor * 2), toothbrushHolderLengthWidth + (protection_factor * 2), gap_between_hole_and_wall_z + 2]);
