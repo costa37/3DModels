@@ -29,10 +29,10 @@ original_plate_thickness = 2; // Thickness of the original plate/wall
 current_walls_thickness = 1; // Thickness of current walls
 holeForToothbrushD = 19;
 protection_factor_final = 0.10; // This is the currect protection factor
-handle_y = 10;
+handle_y = 5;
 
 // Calculations
-gap_between_hole_and_wall_z = ((toothbrushHolderLengthWidth / 2) - (holeForToothbrushD / 2)) * 1.2; // narrower could have been just ~5/6 (without any calculations)
+gap_between_hole_and_wall_z = ((toothbrushHolderLengthWidth / 2) - (holeForToothbrushD / 2)) * 1.5; // narrower could have been just ~5/6 (without any calculations)
 
 // Main
 module hole_narrower(protection_factor){
