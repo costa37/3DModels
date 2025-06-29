@@ -107,7 +107,7 @@ module design(){
         // Cutout for the MagSafe charger
         translate([airpods_x + (charger_x / 2), charger_y / 2, airpods_z + 1 - magsafe_cutout_z])
             rotate([phone_tilt_angle, 0, 0])
-                cylinder(h = magsafe_cutout_z, d = magsafe_cutout_d);
+                cylinder(h = magsafe_cutout_z + 1, d = magsafe_cutout_d);
         // Cutout for the MagSafe power cord
         translate([airpods_x + (charger_x / 2) - cable_width_x/2, charger_y / 2 + magsafe_cutout_d / 2 - 1, airpods_z - magsafe_cutout_z + 3.6])
             rotate([phone_tilt_angle, 0, 0])
