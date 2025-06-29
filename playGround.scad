@@ -1,45 +1,53 @@
-use <libraries/polyedge.scad>;
-
 /*
 
-playGround
+playGround - Wireless MagSafe Charger Housing
 ****************************************
+Housing: 67x67x12mm square
+Charger: d=61.6mm, h=9.8mm
+Inner charging area: d=57.9mm, sits 2mm higher
+Retention ring: fits between outer and inner diameters
 
 */
 
-// Resolution variables
-$fa = 1;    
-$fs = 0.05;
+// Parameters
+housing_width = 67;
+housing_height = 12;
+charger_diameter = 61.6;
+charger_height = 9.8;
+inner_diameter = 57.9;
+raised_height = 2; // How much higher the inner part sits
+ring_height = 2;
+cable_width = 8.5;
 
-airpods_y = 67;
-airpods_z = 13;
-
-charger_x = 110;
-charger_y = 67;
-charger_z = 26;
-
-magsafe_cutout_d = 56;
-magsafe_cutout_z = 5.4;
-magsafe_cort_cutout_x = 2;
-magsafe_cort_cutout_y = 20;
-
-round_edge_r = 8;
-phone_tilt_angle = 5;
-
-module base(){
-    minkowski(){
-        cube([charger_x, airpods_y, charger_z]);
-        sphere(round_edge_r);
+// Main housing with cutouts
+module charger_housing() {
+    difference() {
+        // Main square housing
+        translate([0,0,housing_height/2])
+            cube([housing_width, housing_width, housing_height], center=true);
+        
+        // Cutout for charger body (outer diameter) - positioned so charger top is flush with housing top
+        translate([0, 0, housing_height - charger_height])
+            cylinder(d=charger_diameter, h=charger_height + 1, center=false);
+        
+        // Cutout for the cable
+        translate([- cable_width/2, charger_diameter/2 - 2, housing_height - charger_height])
+            cube([cable_width, 10, 20]);
     }
 }
 
-module design(){
-    difference(){
-        base();
-        translate([0, charger_y / 2, airpods_z / 2])
-            rotate([phone_tilt_angle, 0, 0])
-                cube([charger_x + round_edge_r + 2, phone_y * 2, charger_z * 4]);
+// Retention ring that fits between outer and inner diameters
+module retention_ring() {
+    difference() {
+        cylinder(d=charger_diameter - 0.2, h=ring_height, center=false); // Slightly smaller for tight fit
+        translate([0,0,-1])
+            cylinder(d=inner_diameter + 0.2, h=ring_height + 2, center=false); // Slightly larger for clearance
     }
 }
 
-design();
+// Render the housing
+charger_housing();
+
+// Render the retention ring (positioned separately for printing)
+translate([80, 0, 0])
+    retention_ring();
