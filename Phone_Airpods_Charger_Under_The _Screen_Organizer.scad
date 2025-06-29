@@ -57,10 +57,13 @@ charger_x = 110;
 charger_y = 67;
 charger_z = 26;
 
-magsafe_cutout_d = 56;
-magsafe_cutout_z = 5.4;
+magsafe_cutout_d = 61.6;
+magsafe_cutout_z = 9.8;
 magsafe_cort_cutout_x = 2;
 magsafe_cort_cutout_y = 20;
+cable_width_x = 8.5;
+ring_height = 1;
+inner_diameter = 57.9;
 
 
 phone_x = 100;
@@ -106,15 +109,19 @@ module design(){
             rotate([phone_tilt_angle, 0, 0])
                 cylinder(h = magsafe_cutout_z, d = magsafe_cutout_d);
         // Cutout for the MagSafe power cord
-        translate([airpods_x + (charger_x / 2), charger_y / 2 + magsafe_cutout_d / 2, airpods_z])
+        translate([airpods_x + (charger_x / 2) - cable_width_x/2, charger_y / 2 + magsafe_cutout_d / 2 - 1, airpods_z - magsafe_cutout_z + 3.6])
             rotate([phone_tilt_angle, 0, 0])
-                minkowski(){
-                    cube([magsafe_cort_cutout_x, magsafe_cort_cutout_y, magsafe_cutout_z * 2]);
-                    sphere (magsafe_cort_cutout_x);
-                }
-                
-    }        
-    
+                    cube([cable_width_x, magsafe_cort_cutout_y, magsafe_cutout_z * 2]);
+    }           
+}
+
+// Retention ring that fits between outer and inner diameters
+module retention_ring() {
+    difference() {
+        cylinder(d=magsafe_cutout_d - 0.1, h=ring_height, center=false); // Slightly smaller for tight fit
+        translate([0,0,-1])
+            cylinder(d=inner_diameter + 0.2, h=ring_height + 2, center=false); // Slightly larger for clearance
+    }
 }
 
 module measurment(){
@@ -130,4 +137,9 @@ module measurment(){
 
 // 3D module generation
 design();
+
+// Render the retention ring (positioned separately for printing)
+translate([airpods_x + charger_x + 180, 0, 0])
+    retention_ring();
+
 // measurment();
