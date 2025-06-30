@@ -140,8 +140,8 @@ module measurment(){
 design();
 
 // Render the retention ring (positioned separately for printing)
-// translate([airpods_x + charger_x + 180, 0, 0])
-//     retention_ring();
+translate([airpods_x + charger_x + 180, 0, 0])
+    retention_ring();
 
 // measurment();
 
