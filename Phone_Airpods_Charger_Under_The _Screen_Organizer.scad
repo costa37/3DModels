@@ -45,15 +45,16 @@ $fs = 0.4;
 
 
 // Main dimension variables
-airpods_x = 83;
+airpods_x = 70; //Original 83
 airpods_y = 67;
 airpods_z = 13;
+round_edge_airpods_r = 2;
 
 airpod_dimentions_x = 64;
 airpod_dimentions_y = 49; 
-airpod_dimentions_cutout_z = 1;
+airpod_dimentions_cutout_z = 4;
 
-charger_x = 110;
+charger_x = 90; //Original 110
 charger_y = 67;
 charger_z = 26;
 
@@ -66,11 +67,11 @@ ring_height = 1;
 inner_diameter = 57.9;
 
 
-phone_x = 100;
+phone_x = 85; //Original 100
 phone_y = 170;
 phone_z = 26;
 
-round_edge_r = 8;
+round_edge_r = 4;
 phone_tilt_angle = 5;
 
 // Modules
@@ -99,10 +100,10 @@ module design(){
         translate([- round_edge_r - 2, - round_edge_r - 2, airpods_z / 2])
             cube([airpods_x + round_edge_r + 3, airpods_y * 2 + round_edge_r + 2, airpods_z * 4]);
         // Cutout for the airpods
-        translate([(airpods_x - airpod_dimentions_x) / 2 - 5, (airpods_y - airpod_dimentions_y) / 2 - 2, airpods_z / 2 - airpod_dimentions_cutout_z + 4])
+        translate([(airpods_x - airpod_dimentions_x) / 2 - 3, (airpods_y - airpod_dimentions_y) / 2 - 2, airpods_z / 2 - airpod_dimentions_cutout_z + 4])
             minkowski(){
                 cube([airpod_dimentions_x + 3, airpod_dimentions_y + 3, airpod_dimentions_cutout_z + 1]);
-                sphere(round_edge_r);
+                sphere(round_edge_airpods_r);
             }
         // Cutout for the MagSafe charger
         translate([airpods_x + (charger_x / 2), charger_y / 2, airpods_z + 1 - magsafe_cutout_z])
@@ -139,7 +140,14 @@ module measurment(){
 design();
 
 // Render the retention ring (positioned separately for printing)
-translate([airpods_x + charger_x + 180, 0, 0])
-    retention_ring();
+// translate([airpods_x + charger_x + 180, 0, 0])
+//     retention_ring();
 
 // measurment();
+
+// Printing
+echo(str("airpods_x = ", airpods_x)); 
+echo(str("charger_x = ", charger_x));
+echo(str("phone_x = ", phone_x));
+echo(str("Overall_width_x = ", airpods_x + charger_x + phone_x + round_edge_r*2));
+
