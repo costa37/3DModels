@@ -12,11 +12,6 @@ Description:
 ****************************************
 A parametric square support design for kitchen plate dryer racks.
 The square provides additional stability and support for plate drying racks.
-Features:
-- 150mm x 150mm square design
-- Rounded corners for safety
-- Two mounting holes in the middle of adjacent sides, 20mm from edge
-- 6mm thickness for added strength
 
 Recommended to be printed in PETG or ABS for better durability and heat resistance.
 
@@ -27,7 +22,7 @@ $fa = 1;
 $fs = 0.4;
 
 // Main dimension variables
-side_length = 150;    // Length of each side
+side_length = 110;    // Length of each side
 thickness = 6;       // Thickness of the square
 corner_radius = 3;   // Radius for rounded corners
 hole_diameter = 4;   // Diameter of mounting holes
