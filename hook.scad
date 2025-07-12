@@ -60,11 +60,16 @@ module hook(){
     translate([- sphere_r - 1, - sphere_r - 1, - sphere_r -1])
       cube([sphere_r + 2, b - a  + sphere_r + 1, cube_z + (sphere_r * 2) + 2]);
     
-    translate([(sphere_r) + c, sphere_r, - sphere_r - 1])
-      linear_extrude(cube_z + (sphere_r * 2) + 2)
-      polygon(points=[[0, 0], [0, b + sphere_r + 1], [cube_x, b + sphere_r + 1]]);
+    // Inside triangle
+    minkowski(){
+      translate([(sphere_r) + c + 6, sphere_r + 6, - sphere_r - 1])
+        linear_extrude(cube_z + (sphere_r * 2) + 2)
+        polygon(points=[[0, 0], [0, b + sphere_r + 1], [cube_x, b + sphere_r + 1]]);
+      sphere(sphere_r + 2);
+    }
     
-    translate([(sphere_r * 2) + c, - sphere_r - 1, - sphere_r - 1])
+    // Outside triangle (on the right side)
+    translate([(sphere_r * 2) + c + 8, - sphere_r - 1, - sphere_r - 1])
       linear_extrude(cube_z + (sphere_r * 2) + 2)
       polygon(points=[[- sphere_r * 2, 0], [cube_x, (sphere_r * 2) + b + 1], [cube_x + sphere_r + 1, -sphere_r - 1]]);
   }
