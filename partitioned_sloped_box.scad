@@ -26,17 +26,18 @@ back_height_spec = 120;
 
 // Construction parameters
 wall = 3;                    // outer wall thickness
+back_wall = 5;               // back wall thickness (with magnets)
 partition_thickness = 2;     // thickness of each partition panel
 partition_spacing = 50;      // required spacing between partitions
 partition_headroom = 3;      // additional drop below top edge for partitions
 
 // Magnet parameters (back plate)
 magnets_enabled = true;      // master toggle
-magnet_d = 5;                // magnet diameter (adjustable)
-magnet_clearance = 0.2;      // extra diameter for easy fit
-magnet_depth_param = 2;      // pocket depth into back wall
-magnet_margin = 5;           // edge margin from sides/top/bottom
-magnet_gap = 2;              // gap between magnet pockets
+magnet_d = 17.5;                // magnet diameter (adjustable)
+magnet_clearance = 0.1;      // extra diameter for easy fit
+magnet_depth_param = 4;      // pocket depth into back wall
+magnet_margin = 10;           // edge margin from sides/top/bottom
+magnet_gap = 20;              // gap between magnet pockets
 magnet_center_grid = true;   // center the grid within available area
 magnet_cols_override = 0;    // 0 = auto
 magnet_rows_override = 0;    // 0 = auto
@@ -72,9 +73,9 @@ module shell() {
 			// Front plate (Y = 0..wall), height = front_height_spec
 			cube([width_adj, wall, front_height_spec], center = false);
 
-			// Back plate (Y = depth_spec - wall .. depth_spec), height = back_height_spec
-			translate([0, depth_spec - wall, 0])
-			cube([width_adj, wall, back_height_spec], center = false);
+			// Back plate (Y = depth_spec - back_wall .. depth_spec), height = back_height_spec
+			translate([0, depth_spec - back_wall, 0])
+			cube([width_adj, back_wall, back_height_spec], center = false);
 
 			// Left side plate (X = 0..wall), height = front_height_spec
 			cube([wall, depth_spec, front_height_spec], center = false);
@@ -91,9 +92,9 @@ module shell() {
 }
 
 module partitions() {
-	inner_depth = max(depth_spec - 2*wall, 0.1);
-	inner_front_h = max(front_height_spec - 2*wall, 0.1);
-	inner_back_h  = max(back_height_spec - 2*wall, 0.1);
+	inner_depth = max(depth_spec - wall - back_wall, 0.1);
+	inner_front_h = max(front_height_spec - wall, 0.1);
+	inner_back_h  = max(back_height_spec - wall, 0.1);
 
 	// Place vertical partitions every 50 mm along width (avoid placing at the outer walls)
 	for (xpos = [partition_spacing : partition_spacing : width_adj - partition_spacing]) {
@@ -110,7 +111,7 @@ module partitions() {
 module magnets_cutters() {
 	d_eff = magnet_d + magnet_clearance;
 	pitch = d_eff + magnet_gap;
-	depth_cut = min(magnet_depth_param, max(wall - 0.2, 0.1)); // keep a ~0.2 mm back wall remainder
+	depth_cut = min(magnet_depth_param, max(back_wall - 0.2, 0.1)); // keep a ~0.2 mm back wall remainder
 
 	available_x = max(width_adj - 2*magnet_margin, 0);
 	available_z = max(back_height_spec - 2*magnet_margin, 0);

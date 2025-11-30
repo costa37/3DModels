@@ -1,53 +1,42 @@
 /*
-
-playGround - Wireless MagSafe Charger Housing
-****************************************
-Housing: 67x67x12mm square
-Charger: d=61.6mm, h=9.8mm
-Inner charging area: d=57.9mm, sits 2mm higher
-Retention ring: fits between outer and inner diameters
-
+Magnet Fit Test
+****************
+Test plate to verify magnet fit using exact parameters from partitioned_sloped_box.scad
+Efficient thin wall plate that matches actual wall thickness
 */
 
-// Parameters
-housing_width = 67;
-housing_height = 12;
-charger_diameter = 61.6;
-charger_height = 9.8;
-inner_diameter = 57.9;
-raised_height = 2; // How much higher the inner part sits
-ring_height = 2;
-cable_width = 8.5;
+// Magnet parameters (exact copy from partitioned_sloped_box.scad)
+magnet_d = 17.5;                // magnet diameter
+magnet_clearance = 0.1;         // extra diameter for easy fit
+magnet_depth_param = 4;         // pocket depth into back wall
+wall = 4;                       // wall thickness (from partitioned_sloped_box.scad)
 
-// Main housing with cutouts
-module charger_housing() {
+// Calculated values (same as in magnets_cutters module)
+d_eff = magnet_d + magnet_clearance;  // 18.0
+depth_cut = min(magnet_depth_param, max(wall - 0.2, 0.1)); // 2.8
+
+// Test plate dimensions
+test_plate_width = 30;   // Width of the test plate
+test_plate_height = 40;  // Height of the test plate
+
+// Test plate with magnet cutout
+module magnet_test_plate() {
     difference() {
-        // Main square housing
-        translate([0,0,housing_height/2])
-            cube([housing_width, housing_width, housing_height], center=true);
+        // Main test plate - thin wall matching actual wall thickness
+        cube([test_plate_width, wall, test_plate_height], center = false);
         
-        // Cutout for charger body (outer diameter) - positioned so charger top is flush with housing top
-        translate([0, 0, housing_height - charger_height])
-            cylinder(d=charger_diameter, h=charger_height + 1, center=false);
-        
-        // Cutout for the cable
-        translate([- cable_width/2, charger_diameter/2 - 2, housing_height - charger_height])
-            cube([cable_width, 10, 20]);
+        // Magnet cutout - using exact same parameters and orientation as in partitioned_sloped_box.scad
+        // Positioned on the back face (Y = wall), axis along -Y
+        translate([test_plate_width/2, wall, test_plate_height/2])
+        rotate([90, 0, 0])  // axis along -Y (same as in partitioned_sloped_box.scad)
+        cylinder(
+            h = depth_cut + 1, 
+            d = d_eff, 
+            center = false, 
+            $fn = max(24, ceil(d_eff*6))
+        );
     }
 }
 
-// Retention ring that fits between outer and inner diameters
-module retention_ring() {
-    difference() {
-        cylinder(d=charger_diameter - 0.2, h=ring_height, center=false); // Slightly smaller for tight fit
-        translate([0,0,-1])
-            cylinder(d=inner_diameter + 0.2, h=ring_height + 2, center=false); // Slightly larger for clearance
-    }
-}
-
-// Render the housing
-charger_housing();
-
-// Render the retention ring (positioned separately for printing)
-translate([80, 0, 0])
-    retention_ring();
+// Render the test plate
+magnet_test_plate();
