@@ -1,9 +1,5 @@
-/*
-Magnet Fit Test Plate - Multiple Sizes
-Based on partitioned_sloped_box.scad backplate
-*/
-
-// --- Parameters from partitioned_sloped_box.scad ---
+module magnet_test_plate() {
+    // --- Parameters from partitioned_sloped_box.scad ---
 back_wall = 5;               // back wall thickness
 magnet_depth_param = 4;      // pocket depth
 magnet_gap = 5;              // gap between holes
@@ -19,7 +15,6 @@ test_diameters = [17.6, 17.7, 17.8];
 // Ensure we leave at least 0.2mm wall thickness at the bottom of the hole
 depth_cut = min(magnet_depth_param, max(back_wall - 0.2, 0.1));
 
-module magnet_test_plate() {
     num_holes = len(test_diameters);
     max_d = max(test_diameters);
     
