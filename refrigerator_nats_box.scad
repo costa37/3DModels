@@ -6,7 +6,7 @@
 // Right Side Height=110
 
 width = 210;
-depth = 90;
+depth = 140;
 height_left = 160;
 height_right = 110;
 
