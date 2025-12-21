@@ -75,16 +75,40 @@ module make_box() {
             
             // Magnet Boss (Box side)
             // Center front (y=0), top edge
+            // Smoothed connection to the wall
             translate([width/2, wall/2, height - magnet_h - 2]) // Positioned slightly down
             hull() {
+                 // Top circle (magnet housing)
                  translate([0, 0, 0]) cylinder(d=magnet_d + 2*magnet_wall, h=magnet_h + 2);
+                 // Extend into the wall
                  translate([0, wall, 0]) cylinder(d=magnet_d + 2*magnet_wall, h=magnet_h + 2);
+                 
+                 // Bottom taper point (fades into wall)
+                 // Extended taper (25mm down) and wide base for smoother blend
+                 translate([0, wall, -25]) 
+                 scale([1, 0.01, 0.1]) // Flatten against the wall
+                 cylinder(d=magnet_d + 2*magnet_wall, h=1); 
             }
         }
         
         // Inner cavity
-        translate([wall, wall, wall])
-        rounded_rect(width - 2*wall, depth - 2*wall, height, max(corner_radius - wall, 0.1));
+        difference() {
+            translate([wall, wall, wall])
+            rounded_rect(width - 2*wall, depth - 2*wall, height, max(corner_radius - wall, 0.1));
+            
+            // Exclude magnet area from the cavity cut (keeping it solid)
+            // Use the same smoothed shape to protect the material
+            translate([width/2, wall/2, height - magnet_h - 2])
+            hull() {
+                 translate([0, 0, 0]) cylinder(d=magnet_d + 2*magnet_wall, h=magnet_h + 2);
+                 translate([0, wall, 0]) cylinder(d=magnet_d + 2*magnet_wall, h=magnet_h + 2);
+                 
+                 // Bottom taper point (fades into wall)
+                 translate([0, wall, -25]) 
+                 scale([1, 0.01, 0.1]) 
+                 cylinder(d=magnet_d + 2*magnet_wall, h=1); 
+            }
+        }
         
         // Magnet Hole (Box side)
         translate([width/2, wall/2, height - magnet_h])
@@ -131,8 +155,20 @@ module make_box() {
 module make_lid() {
     // Main Lid Body
     difference() {
-        // Top plate (Flat lid)
-        rounded_rect(width, depth, lid_thickness, corner_radius);
+        union() {
+            // Top plate (Flat lid)
+            rounded_rect(width, depth, lid_thickness, corner_radius);
+
+            // Front Lip / Magnet Housing
+            // Adds a protrusion at the front to house the magnet and serve as a handle
+            translate([width/2, wall/2, 0])
+            hull() {
+                // Main housing cylinder
+                cylinder(d=magnet_d + 2*magnet_wall, h=lid_thickness);
+                // Blend backward to ensure solid connection to lid
+                translate([0, 2, 0]) cylinder(d=magnet_d + 2*magnet_wall, h=lid_thickness);
+            }
+        }
         
         // Magnet Hole (Lid side)
         // Hole faces DOWN (towards box), embedded in the lid
