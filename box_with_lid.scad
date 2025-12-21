@@ -9,9 +9,9 @@
 // Parametric Box with Lid and Hinges for M2x30mm screws
 
 /* [Box Dimensions] */
-width = 100;
-depth = 80;
-height = 50;
+width = 80;
+depth = 60;
+height = 30;
 wall = 2;
 corner_radius = 3;
 
@@ -28,8 +28,8 @@ hinge_knuckle_clearance = 0.4; // Axial clearance between knuckles
 num_hinges = 2; // Fixed at 2 as requested, but logic handles positioning
 
 /* [Magnet Parameters] */
-magnet_d = 5.2; // Diameter of magnet hole (5mm magnet + clearance)
-magnet_h = 2;   // Thickness/Depth of the magnet
+magnet_d = 10.1; // Diameter of magnet hole (9.9mm magnet + clearance)
+magnet_h = 1.7;   // Thickness/Depth of the magnet
 magnet_wall = 1; // Minimum wall thickness around magnet
 
 /* [Display] */
