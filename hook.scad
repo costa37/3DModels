@@ -39,7 +39,7 @@ $fs = 0.4;
 // Main dimension variables (part name is marked on the sketch)
 a = 25;
 b = 50;
-c = 11.5; // Inside measurements
+c = 20.4; //For the locker at work, 11.5 - for the service balcony Inside measurements
 d = 70;
 angle_b_d = 45;
 sphere_r = 2;
