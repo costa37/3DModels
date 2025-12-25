@@ -42,7 +42,7 @@ b = 50;
 c = 20.4; //For the locker at work, 11.5 - for the service balcony Inside measurements
 d = 70;
 angle_b_d = 45;
-sphere_r = 2;
+sphere_r = 4;
 cube_x = c + 49.5 ; //c^2 = a^2 + b^2 - 2ab \cdot \cos(C)
 cube_y = b;
 cube_z = 14 - sphere_r; 
