@@ -84,8 +84,9 @@ module make_box() {
                  translate([0, wall, 0]) cylinder(d=magnet_d + 2*magnet_wall, h=magnet_h + 2);
                  
                  // Bottom taper point (fades into wall)
-                 // Extended taper (25mm down) and wide base for smoother blend
-                 translate([0, wall, -25]) 
+                 // Taper distance matches external boss proportion
+                 taper_distance = magnet_d; // Similar to external protrusion scale
+                 translate([0, wall, -taper_distance]) 
                  scale([1, 0.01, 0.1]) // Flatten against the wall
                  cylinder(d=magnet_d + 2*magnet_wall, h=1); 
             }
@@ -98,13 +99,14 @@ module make_box() {
             
             // Exclude magnet area from the cavity cut (keeping it solid)
             // Use the same smoothed shape to protect the material
+            taper_distance = magnet_d;
             translate([width/2, wall/2, height - magnet_h - 2])
             hull() {
                  translate([0, 0, 0]) cylinder(d=magnet_d + 2*magnet_wall, h=magnet_h + 2);
                  translate([0, wall, 0]) cylinder(d=magnet_d + 2*magnet_wall, h=magnet_h + 2);
                  
                  // Bottom taper point (fades into wall)
-                 translate([0, wall, -25]) 
+                 translate([0, wall, -taper_distance]) 
                  scale([1, 0.01, 0.1]) 
                  cylinder(d=magnet_d + 2*magnet_wall, h=1); 
             }
