@@ -163,12 +163,24 @@ module make_lid() {
 
             // Front Lip / Magnet Housing
             // Adds a protrusion at the front to house the magnet and serve as a handle
+            // Extended along X-axis for better grip area
             translate([width/2, wall/2, 0])
             hull() {
                 // Main housing cylinder
                 cylinder(d=magnet_d + 2*magnet_wall, h=lid_thickness);
+                
                 // Blend backward to ensure solid connection to lid
                 translate([0, 2, 0]) cylinder(d=magnet_d + 2*magnet_wall, h=lid_thickness);
+                
+                // Left wing extension for grip area
+                translate([-(magnet_d + 2*magnet_wall), 3, 0]) 
+                scale([0.5, 1, 1])
+                cylinder(d=magnet_d/2, h=lid_thickness);
+                
+                // Right wing extension for grip area
+                translate([+(magnet_d + 2*magnet_wall), 3, 0]) 
+                scale([0.5, 1, 1])
+                cylinder(d=magnet_d/2, h=lid_thickness);
             }
         }
         
