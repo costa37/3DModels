@@ -22,7 +22,7 @@ lid_clearance = 0.2; // Clearance for lid fitting onto box
 
 /* [Hinge Parameters] */
 hinge_screw_length = 30; // M2x30mm
-hinge_screw_diameter = 2.4; // Loose clearance for M2 to act as a pin
+hinge_screw_diameter = 2.1; // Tighter fit for M2 screw
 hinge_outer_diameter = 7;
 hinge_knuckle_clearance = 0.4; // Axial clearance between knuckles
 num_hinges = 2; // Fixed at 2 as requested, but logic handles positioning
@@ -129,9 +129,9 @@ module make_box() {
             difference() {
                 hull() {
                     hinge_shape(knuckle_w_side);
-                    // Connect to box back wall
+                    // Connect to box back wall - bottom half only to avoid square top
                     translate([0, -hinge_outer_diameter/2, -hinge_outer_diameter/2])
-                    cube([knuckle_w_side, hinge_outer_diameter/2, hinge_outer_diameter]);
+                    cube([knuckle_w_side, hinge_outer_diameter/2, hinge_outer_diameter/2]);
                 }
                 translate([-1, 0, 0]) hinge_cutout(knuckle_w_side);
             }
@@ -141,9 +141,9 @@ module make_box() {
                 difference() {
                     hull() {
                         hinge_shape(knuckle_w_side);
-                         // Connect to box back wall
+                         // Connect to box back wall - bottom half only
                         translate([0, -hinge_outer_diameter/2, -hinge_outer_diameter/2])
-                        cube([knuckle_w_side, hinge_outer_diameter/2, hinge_outer_diameter]);
+                        cube([knuckle_w_side, hinge_outer_diameter/2, hinge_outer_diameter/2]);
                     }
                     translate([-1, 0, 0]) hinge_cutout(knuckle_w_side);
                 }
