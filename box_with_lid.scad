@@ -9,9 +9,21 @@
 // Parametric Box with Lid and Hinges for M2x30mm screws
 
 /* [Box Dimensions] */
-width = 80;
-depth = 60;
-height = 30;
+/*
+For Laundry Capsules
+Width: 230mm
+Depth: 93mm
+Height: 170mm  
+
+For Test Box
+Width: 80mm
+Depth: 60mm
+Height: 30mm
+*/
+
+width = 230;
+depth = 93;
+height = 170;
 wall = 2;
 corner_radius = 3;
 
