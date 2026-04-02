@@ -5,10 +5,11 @@
 // Left Side Height=160
 // Right Side Height=110
 
-width = 210;
-depth = 140;
-height_left = 160;
-height_right = 110;
+// Demantions for service balcony
+width = 250;
+depth = 130;
+height_left = 250;
+height_right = 160;
 
 wall = 3;       // Wall thickness
 radius = 5;     // External corner radius
