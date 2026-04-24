@@ -44,10 +44,11 @@ back_plate_thickness = 4;
 pocket_bottom_thickness = 3;
 tongue_thickness = 3.2;
 frame_fit_clearance = 2.5;
-inner_hook_drop = 65;
+inner_hook_drop = 97.5;
 top_margin_above_pocket = 28;
 join_overlap = 0.2;
 corner_radius = 4;
+pocket_outer_corner_radius = 8;
 
 // Calculated dimensions
 pocket_height = remote_height * 0.35;
@@ -80,7 +81,7 @@ module rounded_box(size, radius) {
 module pocket() {
     union() {
         // Pocket floor
-        rounded_box([pocket_outer_width, pocket_outer_depth, pocket_bottom_thickness], corner_radius);
+        rounded_box([pocket_outer_width, pocket_outer_depth, pocket_bottom_thickness], pocket_outer_corner_radius);
 
         // Left side wall
         rounded_box([wall_thickness, pocket_outer_depth, pocket_body_height], wall_thickness / 2);
