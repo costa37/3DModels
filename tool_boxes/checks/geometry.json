@@ -1,0 +1,91 @@
+{
+  "half_bounds": {
+    "male": [
+      150.0,
+      211.0,
+      110.0
+    ],
+    "female": [
+      150.0,
+      204.95,
+      110.0
+    ]
+  },
+  "magnets": [
+    {
+      "center": [
+        -58.0,
+        -188.0
+      ],
+      "diameter": 17.8,
+      "depth": 4.3,
+      "entry_chamfer": 0.3999999999999999
+    },
+    {
+      "center": [
+        58.0,
+        -188.0
+      ],
+      "diameter": 17.8,
+      "depth": 4.3,
+      "entry_chamfer": 0.3999999999999999
+    },
+    {
+      "center": [
+        -58.0,
+        188.0
+      ],
+      "diameter": 17.8,
+      "depth": 4.3,
+      "entry_chamfer": 0.3999999999999999
+    },
+    {
+      "center": [
+        58.0,
+        188.0
+      ],
+      "diameter": 17.8,
+      "depth": 4.3,
+      "entry_chamfer": 0.3999999999999999
+    }
+  ],
+  "assembly_path": [
+    {
+      "male_lift_mm": 0,
+      "overlap_volume_mm3": 0
+    },
+    {
+      "male_lift_mm": 0.2,
+      "overlap_volume_mm3": 0
+    },
+    {
+      "male_lift_mm": 1,
+      "overlap_volume_mm3": 0
+    },
+    {
+      "male_lift_mm": 5,
+      "overlap_volume_mm3": 0
+    },
+    {
+      "male_lift_mm": 25,
+      "overlap_volume_mm3": 0
+    },
+    {
+      "male_lift_mm": 50,
+      "overlap_volume_mm3": 0
+    },
+    {
+      "male_lift_mm": 100,
+      "overlap_volume_mm3": 0
+    },
+    {
+      "male_lift_mm": 110,
+      "overlap_volume_mm3": 0
+    }
+  ],
+  "downward_stop": {
+    "shift_mm": -0.2,
+    "interference_mm3": 14.446599999999997
+  },
+  "ok": true
+}
