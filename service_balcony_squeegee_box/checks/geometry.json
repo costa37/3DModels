@@ -1,0 +1,43 @@
+{
+  "left_male": {
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 608791.6518594872,
+    "bounds_mm": [
+      216.00000010000008,
+      245.00000020000004,
+      169.78044103024465
+    ],
+    "bottom_z": -1.1102230246251565e-16,
+    "top_z": 169.78044103024465
+  },
+  "right_female": {
+    "valid": true,
+    "solids": 1,
+    "volume_mm3": 589256.2786413035,
+    "bounds_mm": [
+      209.9500002000001,
+      245.0000002,
+      169.78044103024462
+    ],
+    "bottom_z": -1.1102230246251565e-16,
+    "top_z": 169.78044103024462
+  },
+  "male_translation_z_collision_mm3": {
+    "0": 0.0,
+    "0.2": 0.0,
+    "3": 0.0,
+    "7": 0.0,
+    "60": 0.0,
+    "170": 0.0,
+    "-0.2": 14.446599999999506
+  },
+  "assembled_bounds_mm": [
+    420.00000020000016,
+    245.00000020000004,
+    169.78044103024465
+  ],
+  "height_note": "110/170 mm nominal sloping top before 0.8 mm edge rounding; rounded rear crown is slightly below 170 mm.",
+  "engraved_front_section_missing_mm3": 55.9533382690114,
+  "continuous_backing_section_missing_mm3": 0.08999999999997499
+}

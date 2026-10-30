@@ -1,0 +1,11 @@
+{
+  "input": "service_balcony_squeegee_box/squeegee_box.step.py",
+  "mode": "view",
+  "outputs": [
+    {"path":"service_balcony_squeegee_box/renders/assembled.png","camera":{"direction":[1,-1,0.8]}},
+    {"path":"service_balcony_squeegee_box/renders/rear.png","camera":{"direction":[-1,1,0.8]}},
+    {"path":"service_balcony_squeegee_box/renders/top.png","camera":"top"},
+    {"path":"service_balcony_squeegee_box/renders/front.png","camera":"front"}
+  ],
+  "render":{"padding":0.12,"sizeProfile":"diagnostic"}
+}
