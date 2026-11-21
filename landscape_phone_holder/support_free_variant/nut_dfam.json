@@ -1,0 +1,113 @@
+{
+  "file": "landscape_phone_holder/support_free_variant/nut.stl",
+  "mesh": {
+    "bbox_mm": [
+      37.4,
+      34.0,
+      11.0
+    ],
+    "volume_mm3": 5435.9,
+    "surface_area_mm2": 2626.0,
+    "triangle_count": 1324,
+    "watertight": true,
+    "euler_number": 0,
+    "body_count": 1
+  },
+  "scale": {
+    "bbox_diagonal_mm": 51.7277,
+    "units_suspect": false,
+    "note": "bbox consistent with millimetre units"
+  },
+  "overhangs": {
+    "angle_limit_used_deg": 45.0,
+    "down_facing_area_below_limit_mm2": 0.0,
+    "down_facing_area_below_limit_pct": 0.0,
+    "face_count_below_limit": 0,
+    "down_facing_angle_histogram_mm2": {
+      "50-60deg": 135.83,
+      "80-90deg": 119.73
+    },
+    "largest_faces_below_limit": []
+  },
+  "wall_thickness": {
+    "samples_valid": 1324,
+    "min_mm": 0.098,
+    "p05_mm": 5.781,
+    "p25_mm": 6.316,
+    "median_mm": 10.514,
+    "max_mm": 25.75,
+    "thinnest_samples": [
+      {
+        "location_xyz": [
+          5.03,
+          -5.14,
+          10.94
+        ],
+        "thickness_mm": 0.098
+      },
+      {
+        "location_xyz": [
+          4.53,
+          -5.53,
+          10.91
+        ],
+        "thickness_mm": 0.144
+      },
+      {
+        "location_xyz": [
+          2.79,
+          6.44,
+          0.18
+        ],
+        "thickness_mm": 0.278
+      },
+      {
+        "location_xyz": [
+          1.22,
+          -6.8,
+          10.76
+        ],
+        "thickness_mm": 0.378
+      },
+      {
+        "location_xyz": [
+          1.22,
+          -6.8,
+          10.76
+        ],
+        "thickness_mm": 0.378
+      },
+      {
+        "location_xyz": [
+          -0.03,
+          6.82,
+          0.29
+        ],
+        "thickness_mm": 0.465
+      },
+      {
+        "location_xyz": [
+          2.27,
+          -6.76,
+          10.61
+        ],
+        "thickness_mm": 0.624
+      },
+      {
+        "location_xyz": [
+          -2.5,
+          -6.16,
+          10.59
+        ],
+        "thickness_mm": 0.66
+      }
+    ]
+  },
+  "support_volume": {
+    "angle_limit_used_deg": 45.0,
+    "estimated_support_volume_mm3": 0.0,
+    "part_volume_mm3": 5435.9,
+    "support_to_part_ratio_pct": 0.0,
+    "method": "prism from face centroid to build plate; coarse upper-bound estimate"
+  }
+}

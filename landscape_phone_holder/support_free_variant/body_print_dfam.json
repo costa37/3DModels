@@ -1,0 +1,112 @@
+{
+  "file": "../STLs_for_Bambu_Studio/01_Holder_Body_Print_1.stl",
+  "mesh": {
+    "bbox_mm": [
+      76.0,
+      82.07,
+      238.0
+    ],
+    "volume_mm3": 484925.5,
+    "surface_area_mm2": 99086.7,
+    "triangle_count": 132,
+    "watertight": true,
+    "euler_number": -2,
+    "body_count": 1
+  },
+  "scale": {
+    "bbox_diagonal_mm": 262.9738,
+    "units_suspect": false,
+    "note": "bbox consistent with millimetre units"
+  },
+  "overhangs": {
+    "angle_limit_used_deg": 45.0,
+    "down_facing_area_below_limit_mm2": 0.0,
+    "down_facing_area_below_limit_pct": 0.0,
+    "face_count_below_limit": 0,
+    "down_facing_angle_histogram_mm2": {
+      "50-60deg": 1551.55
+    },
+    "largest_faces_below_limit": []
+  },
+  "wall_thickness": {
+    "samples_valid": 132,
+    "min_mm": 3.0,
+    "p05_mm": 5.0,
+    "p25_mm": 6.0,
+    "median_mm": 14.997,
+    "max_mm": 238.0,
+    "thinnest_samples": [
+      {
+        "location_xyz": [
+          67.03,
+          81.14,
+          79.33
+        ],
+        "thickness_mm": 3.0
+      },
+      {
+        "location_xyz": [
+          66.89,
+          78.07,
+          158.67
+        ],
+        "thickness_mm": 3.0
+      },
+      {
+        "location_xyz": [
+          73.48,
+          75.28,
+          79.33
+        ],
+        "thickness_mm": 5.0
+      },
+      {
+        "location_xyz": [
+          73.48,
+          75.28,
+          79.33
+        ],
+        "thickness_mm": 5.0
+      },
+      {
+        "location_xyz": [
+          73.48,
+          75.28,
+          79.33
+        ],
+        "thickness_mm": 5.0
+      },
+      {
+        "location_xyz": [
+          68.92,
+          72.34,
+          79.33
+        ],
+        "thickness_mm": 5.0
+      },
+      {
+        "location_xyz": [
+          68.92,
+          72.34,
+          79.33
+        ],
+        "thickness_mm": 5.0
+      },
+      {
+        "location_xyz": [
+          68.92,
+          72.34,
+          79.33
+        ],
+        "thickness_mm": 5.0
+      }
+    ]
+  },
+  "support_volume": {
+    "angle_limit_used_deg": 45.0,
+    "estimated_support_volume_mm3": 0.0,
+    "part_volume_mm3": 484925.5,
+    "support_to_part_ratio_pct": 0.0,
+    "method": "prism from face centroid to build plate; coarse upper-bound estimate"
+  }
+}

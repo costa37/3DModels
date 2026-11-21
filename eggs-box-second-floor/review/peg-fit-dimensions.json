@@ -1,0 +1,22 @@
+[
+  {
+    "marks": 1,
+    "measured_peg_diameter_mm": 6.2,
+    "total_height_mm": 8.4
+  },
+  {
+    "marks": 2,
+    "measured_peg_diameter_mm": 6.3,
+    "total_height_mm": 8.4
+  },
+  {
+    "marks": 3,
+    "measured_peg_diameter_mm": 6.4,
+    "total_height_mm": 8.4
+  },
+  {
+    "marks": 4,
+    "measured_peg_diameter_mm": 6.5,
+    "total_height_mm": 8.4
+  }
+]

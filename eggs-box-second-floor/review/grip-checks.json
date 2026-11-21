@@ -1,0 +1,15 @@
+{
+  "grip_count": 4,
+  "grip_radius_mm": 10,
+  "bowl_count": 12,
+  "minimum_bowl_surface_to_grip_wall_mm": 3.2793364481542304,
+  "bowl_floor_mm": 4,
+  "sample_stl_reexported": false,
+  "sample_source": "tray(include_grips=False), original crop parameters unchanged",
+  "old_sample_step_volume_mm3": 53747.97529401376,
+  "current_sample_volume_mm3": 53747.967892853325,
+  "sample_volume_difference_mm3": 0.007401160435,
+  "sample_bounds_match_mm": 1e-06,
+  "sample_comparison_note": "Small volume discrepancy from STEP roundtrip tolerance; boolean symmetric difference was numerically unreliable. Existing sample STL left untouched.",
+  "physical_finger_clearance_unverified": true
+}

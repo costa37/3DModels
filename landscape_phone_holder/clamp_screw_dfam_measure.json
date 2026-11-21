@@ -1,0 +1,191 @@
+{
+  "file": "landscape_phone_holder/clamp_screw.stl",
+  "mesh": {
+    "bbox_mm": [
+      25.79,
+      25.79,
+      53.0
+    ],
+    "volume_mm3": 9202.8,
+    "surface_area_mm2": 4273.6,
+    "triangle_count": 16710,
+    "watertight": true,
+    "euler_number": 2,
+    "body_count": 1
+  },
+  "scale": {
+    "bbox_diagonal_mm": 64.3336,
+    "units_suspect": false,
+    "note": "bbox consistent with millimetre units"
+  },
+  "overhangs": {
+    "angle_limit_used_deg": 45.0,
+    "down_facing_area_below_limit_mm2": 771.48,
+    "down_facing_area_below_limit_pct": 18.1,
+    "face_count_below_limit": 2637,
+    "down_facing_angle_histogram_mm2": {
+      "20-30deg": 761.52,
+      "30-40deg": 6.54,
+      "40-50deg": 7.71,
+      "50-60deg": 8.05,
+      "60-70deg": 8.69,
+      "70-80deg": 6.86,
+      "80-90deg": 518.6
+    },
+    "largest_faces_below_limit": [
+      {
+        "location_xyz": [
+          -4.29,
+          4.23,
+          8.24
+        ],
+        "surface_angle_deg": 24.1,
+        "area_mm2": 0.67
+      },
+      {
+        "location_xyz": [
+          -6.5,
+          0.06,
+          29.87
+        ],
+        "surface_angle_deg": 24.3,
+        "area_mm2": 0.43
+      },
+      {
+        "location_xyz": [
+          -1.69,
+          -6.27,
+          44.61
+        ],
+        "surface_angle_deg": 24.3,
+        "area_mm2": 0.43
+      },
+      {
+        "location_xyz": [
+          4.42,
+          -4.76,
+          13.67
+        ],
+        "surface_angle_deg": 24.3,
+        "area_mm2": 0.43
+      },
+      {
+        "location_xyz": [
+          6.39,
+          1.18,
+          38.73
+        ],
+        "surface_angle_deg": 24.3,
+        "area_mm2": 0.43
+      },
+      {
+        "location_xyz": [
+          -2.04,
+          6.17,
+          15.18
+        ],
+        "surface_angle_deg": 24.3,
+        "area_mm2": 0.43
+      },
+      {
+        "location_xyz": [
+          -6.04,
+          -2.4,
+          19.59
+        ],
+        "surface_angle_deg": 24.3,
+        "area_mm2": 0.43
+      },
+      {
+        "location_xyz": [
+          -1.55,
+          6.31,
+          43.14
+        ],
+        "surface_angle_deg": 24.3,
+        "area_mm2": 0.43
+      }
+    ]
+  },
+  "wall_thickness": {
+    "samples_valid": 2000,
+    "min_mm": 0.752,
+    "p05_mm": 1.806,
+    "p25_mm": 8.0,
+    "median_mm": 12.493,
+    "max_mm": 53.0,
+    "thinnest_samples": [
+      {
+        "location_xyz": [
+          6.5,
+          -0.17,
+          49.11
+        ],
+        "thickness_mm": 0.752
+      },
+      {
+        "location_xyz": [
+          5.74,
+          -3.04,
+          48.86
+        ],
+        "thickness_mm": 1.031
+      },
+      {
+        "location_xyz": [
+          5.73,
+          -1.75,
+          49.8
+        ],
+        "thickness_mm": 1.057
+      },
+      {
+        "location_xyz": [
+          5.49,
+          -3.47,
+          48.82
+        ],
+        "thickness_mm": 1.078
+      },
+      {
+        "location_xyz": [
+          5.21,
+          -3.88,
+          48.77
+        ],
+        "thickness_mm": 1.124
+      },
+      {
+        "location_xyz": [
+          3.81,
+          -5.26,
+          48.6
+        ],
+        "thickness_mm": 1.31
+      },
+      {
+        "location_xyz": [
+          4.31,
+          -4.17,
+          49.8
+        ],
+        "thickness_mm": 1.322
+      },
+      {
+        "location_xyz": [
+          1.39,
+          -6.63,
+          49.59
+        ],
+        "thickness_mm": 1.483
+      }
+    ]
+  },
+  "support_volume": {
+    "angle_limit_used_deg": 45.0,
+    "estimated_support_volume_mm3": 19677.9,
+    "part_volume_mm3": 9202.8,
+    "support_to_part_ratio_pct": 213.8,
+    "method": "prism from face centroid to build plate; coarse upper-bound estimate"
+  }
+}

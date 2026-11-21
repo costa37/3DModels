@@ -1,0 +1,15 @@
+{
+    "from": "User",
+    "inherits": "0.20mm Strength @BBL X1C",
+    "name": "Kitchen plate dryer v2 - P1S PLA",
+    "print_settings_id": "Kitchen plate dryer v2 - P1S PLA",
+    "version": "2.0.0.0",
+    "wall_loops": "6",
+    "top_shell_layers": "8",
+    "bottom_shell_layers": "8",
+    "sparse_infill_density": "40%",
+    "sparse_infill_pattern": "gyroid",
+    "compatible_printers": [
+        "Bambu Lab P1S 0.4 nozzle"
+    ]
+}

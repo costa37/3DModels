@@ -1,0 +1,59 @@
+{
+  "jobs": [
+    {
+      "input": "/Users/costa/Downloads/GitHub/3DModels/landscape_phone_holder/support_free_variant/assembly.step.py",
+      "mode": "view",
+      "outputs": [
+        {
+          "path": "/Users/costa/Downloads/GitHub/3DModels/landscape_phone_holder/support_free_variant/preview.png",
+          "camera": {
+            "direction": [
+              1,
+              1,
+              0.7
+            ]
+          }
+        },
+        {
+          "path": "/Users/costa/Downloads/GitHub/3DModels/landscape_phone_holder/support_free_variant/rear.png",
+          "camera": {
+            "direction": [
+              -1,
+              -1,
+              -0.6
+            ]
+          }
+        },
+        {
+          "path": "/Users/costa/Downloads/GitHub/3DModels/landscape_phone_holder/support_free_variant/side.png",
+          "camera": "right"
+        },
+        {
+          "path": "/Users/costa/Downloads/GitHub/3DModels/landscape_phone_holder/support_free_variant/top.png",
+          "camera": "top"
+        }
+      ],
+      "render": {
+        "viewLabels": true,
+        "padding": 0.12,
+        "sizeProfile": "diagnostic"
+      }
+    },
+    {
+      "input": "/Users/costa/Downloads/GitHub/3DModels/landscape_phone_holder/support_free_variant/body_print.step.py",
+      "mode": "view",
+      "outputs": [
+        {
+          "path": "/Users/costa/Downloads/GitHub/3DModels/landscape_phone_holder/support_free_variant/print_orientation.png",
+          "camera": "iso"
+        }
+      ],
+      "theme": "workbench-light",
+      "render": {
+        "viewLabels": true,
+        "padding": 0.12,
+        "sizeProfile": "diagnostic"
+      }
+    }
+  ]
+}

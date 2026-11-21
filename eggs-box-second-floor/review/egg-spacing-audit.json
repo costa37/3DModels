@@ -1,0 +1,38 @@
+[
+  {
+    "egg_length_mm": 56,
+    "egg_width_mm": 44,
+    "neighbors": "column_neighbors",
+    "normalized_separation": 1.0162612217785834,
+    "overlap_for_identical_aligned_ellipsoids": false,
+    "center_distance_mm": 54.0,
+    "required_distance_same_direction_mm": 53.13594462011774
+  },
+  {
+    "egg_length_mm": 56,
+    "egg_width_mm": 44,
+    "neighbors": "row_neighbors",
+    "normalized_separation": 1.03103385438501,
+    "overlap_for_identical_aligned_ellipsoids": false,
+    "center_distance_mm": 47.0,
+    "required_distance_same_direction_mm": 45.58531206333134
+  },
+  {
+    "egg_length_mm": 60,
+    "egg_width_mm": 46,
+    "neighbors": "column_neighbors",
+    "normalized_separation": 0.9547047442972338,
+    "overlap_for_identical_aligned_ellipsoids": true,
+    "center_distance_mm": 54.0,
+    "required_distance_same_direction_mm": 56.56198979062354
+  },
+  {
+    "egg_length_mm": 60,
+    "egg_width_mm": 46,
+    "neighbors": "row_neighbors",
+    "normalized_separation": 0.9834070912677871,
+    "overlap_for_identical_aligned_ellipsoids": true,
+    "center_distance_mm": 47.0,
+    "required_distance_same_direction_mm": 47.79302530695464
+  }
+]

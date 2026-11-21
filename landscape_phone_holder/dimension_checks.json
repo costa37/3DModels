@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "body_solids": 1,
+  "body_valid": true,
+  "body_volume_mm3": 282379.1197043138,
+  "body_size_mm": [
+    238.0000002,
+    74.06841943189204,
+    76.0
+  ],
+  "shelf_length_mm": 190.0,
+  "channel_depth_mm": 18.0,
+  "lip_height_mm": 3.0000000000000058,
+  "backward_tilt_deg": 9.999999999999975,
+  "clamp_spacing_mm": 214.0,
+  "confirmed_tabletop_mm": 30.0,
+  "shelf_drop_mm": 20.0,
+  "shelf_rear_height_mm": -65.0,
+  "190x90x16_phone_body_overlap_mm3": 0,
+  "30mm_table_body_overlap_mm3": 0
+}

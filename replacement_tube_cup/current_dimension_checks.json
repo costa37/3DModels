@@ -1,0 +1,49 @@
+{
+  "cup": {
+    "exact_bounds_mm": [
+      33.1,
+      33.1,
+      16.2
+    ],
+    "solid_count": 1,
+    "volume_mm3": 4201.111121208422,
+    "topology_valid": true,
+    "bop_valid": true,
+    "continuous_floor": true,
+    "thread_groove_and_ridge_probes": true,
+    "cylinder_diameters_mm": [
+      13.1,
+      16.5,
+      30.7,
+      33.1
+    ]
+  },
+  "thread_fit_test": {
+    "exact_bounds_mm": [
+      20.0,
+      20.0,
+      8.60000010259616
+    ],
+    "solid_count": 1,
+    "volume_mm3": 1230.3268609518373,
+    "topology_valid": true,
+    "bop_valid": true,
+    "continuous_floor": true,
+    "thread_groove_and_ridge_probes": true,
+    "cylinder_diameters_mm": [
+      13.1,
+      16.5,
+      20.0
+    ]
+  },
+  "thread": {
+    "measured_male_major_diameter_mm": 14.2,
+    "interpreted_pitch_mm": 2.1,
+    "female_minor_mm": 13.1,
+    "female_groove_major_mm": 14.5,
+    "diametral_clearance_mm": 0.3,
+    "boss_height_mm": 6.2,
+    "profile": "approximate 60-degree trapezoidal, right-hand single-start",
+    "physical_fit_tested": false
+  }
+}

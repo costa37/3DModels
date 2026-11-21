@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "units": "mm",
+  "exact_brep_bounds": [
+    33.1,
+    33.1,
+    16.2
+  ],
+  "cylindrical_faces": [
+    {
+      "diameter": 33.1,
+      "z_min": 0.0,
+      "z_max": 16.2
+    },
+    {
+      "diameter": 30.7,
+      "z_min": 2.4,
+      "z_max": 16.2
+    },
+    {
+      "diameter": 16.5,
+      "z_min": 3.9,
+      "z_max": 8.6
+    },
+    {
+      "diameter": 12.9,
+      "z_min": 2.3999999,
+      "z_max": 3.96948125958732
+    },
+    {
+      "diameter": 12.9,
+      "z_min": 3.48052621578946,
+      "z_max": 5.5194584117238294
+    },
+    {
+      "diameter": 12.9,
+      "z_min": 5.030521184301239,
+      "z_max": 7.0694919512026955
+    },
+    {
+      "diameter": 12.9,
+      "z_min": 6.580543582653902,
+      "z_max": 8.200000099999999
+    },
+    {
+      "diameter": 12.9,
+      "z_min": 8.13050847096074,
+      "z_max": 8.200000099999999
+    }
+  ],
+  "solid_count": 1,
+  "positive_volume_mm3": 4210.868404058746,
+  "thread_spline_faces": 5,
+  "floor_continuous_at_axis": true,
+  "boss_height_above_floor": 6.2,
+  "floor_thickness": 2.4,
+  "thread_pitch_provisional": 1.55,
+  "groove_major_diameter_provisional": 14.5,
+  "physical_fit_verified": false
+}

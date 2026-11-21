@@ -1,0 +1,19 @@
+SUPPORT-FREE ONE-PIECE PHONE HOLDER
+
+Print quantities:
+1 x 01_Holder_Body_Print_1.stl
+2 x 02_Clamp_Screw_Print_2.stl
+2 x 03_Captive_Nut_Print_2.stl
+2 x 04_Pressure_Pad_Print_2.stl
+
+All STL files are in millimetres and already oriented for printing.
+Keep the holder body standing on its C-shaped end, 238 mm tall.
+Use Bambu Studio Duplicate / Add Instance to make the second screw, nut and pad.
+Import the files as separate objects, not as one multipart object.
+Keep supports disabled and use a brim for the tall body.
+Print one screw and nut first to check the thread fit.
+These parts are the matching support-free variant; do not mix with the earlier model.
+
+Geometry checks passed. Physical printing and thread fit are not yet tested.
+
+Corrected clamp body: before mounting, drop each nut into the top of the lower rail. Match the long diamond points and seat the nut flat. Thread the screw up from underneath. Put the pad socket over the screw tip, with the flat face toward the desk.

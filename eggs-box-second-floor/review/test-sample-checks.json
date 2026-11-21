@@ -1,0 +1,15 @@
+{
+  "bounds_mm": [
+    108.0000002,
+    52.0000002,
+    12.000000200000006
+  ],
+  "complete_bowl_count": 2,
+  "bowl_floor_z_mm": [
+    3.9999999,
+    3.9999999
+  ],
+  "socket_probe_clear": true,
+  "x_pitch_mm": 54,
+  "row_spacing_tested": false
+}

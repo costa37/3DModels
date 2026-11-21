@@ -1,0 +1,50 @@
+{
+  "file": "landscape_phone_holder/clamp_screw.stl",
+  "scale": {
+    "bbox_diagonal_mm": 64.3336,
+    "units_suspect": false,
+    "note": "bbox consistent with millimetre units"
+  },
+  "orientations": {
+    "angle_limit_used_deg": 45.0,
+    "pct_denominator": "total surface area",
+    "candidates": [
+      {
+        "orientation": "current_plus_z",
+        "support_area_mm2": 771.48,
+        "support_area_pct": 18.1,
+        "build_height_mm": 53.0
+      },
+      {
+        "orientation": "flip_180_x",
+        "support_area_mm2": 1200.06,
+        "support_area_pct": 28.1,
+        "build_height_mm": 53.0
+      },
+      {
+        "orientation": "rot_plus_90_x",
+        "support_area_mm2": 423.1,
+        "support_area_pct": 9.9,
+        "build_height_mm": 25.79
+      },
+      {
+        "orientation": "rot_minus_90_x",
+        "support_area_mm2": 424.5,
+        "support_area_pct": 9.9,
+        "build_height_mm": 25.79
+      },
+      {
+        "orientation": "rot_plus_90_y",
+        "support_area_mm2": 424.01,
+        "support_area_pct": 9.9,
+        "build_height_mm": 25.79
+      },
+      {
+        "orientation": "rot_minus_90_y",
+        "support_area_mm2": 423.95,
+        "support_area_pct": 9.9,
+        "build_height_mm": 25.79
+      }
+    ]
+  }
+}

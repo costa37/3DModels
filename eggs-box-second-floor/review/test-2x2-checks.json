@@ -1,0 +1,25 @@
+{
+  "step_valid": true,
+  "bounds_mm": [
+    112.0000001,
+    97.5000002,
+    12.000000100000115
+  ],
+  "stl_watertight": true,
+  "stl_components": 1,
+  "pitch_mm": [
+    54,
+    47
+  ],
+  "socket_center_local_mm": [
+    -2,
+    41.25
+  ],
+  "maps_to_full_tray_center_mm": [
+    56,
+    25.25
+  ],
+  "lifting_cutouts_included": true,
+  "complete_cutouts": 1,
+  "partial_cutouts_at_crop_boundary": 1
+}

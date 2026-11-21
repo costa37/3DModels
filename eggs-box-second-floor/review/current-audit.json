@@ -1,0 +1,81 @@
+{
+  "units": "mm",
+  "parts": {
+    "tray_print": {
+      "source_valid": true,
+      "step_valid": true,
+      "source_bounds": [
+        224.0000002,
+        148.0,
+        12.00000020000001
+      ],
+      "step_bounds": [
+        224.0000002,
+        148.0,
+        12.000000200000217
+      ],
+      "stl_bounds": [
+        224.0,
+        148.0,
+        12.0
+      ],
+      "source_volume": 308256.97984371294,
+      "step_volume": 308257.0001288736,
+      "stl_volume": 308547.47540588776,
+      "stl_watertight": true,
+      "stl_winding_consistent": true,
+      "stl_components": 1,
+      "stl_min_z": -1.1102230246251565e-16
+    },
+    "leg_print": {
+      "source_valid": true,
+      "step_valid": true,
+      "source_bounds": [
+        10.0,
+        10.0,
+        58.099999999999994
+      ],
+      "step_bounds": [
+        10.0,
+        10.0,
+        58.1
+      ],
+      "stl_bounds": [
+        9.993784427642822,
+        9.996891975402832,
+        58.099998474121094
+      ],
+      "source_volume": 3185.1269468730197,
+      "step_volume": 3185.126946872998,
+      "stl_volume": 3166.9760944645313,
+      "stl_watertight": true,
+      "stl_winding_consistent": true,
+      "stl_components": 1,
+      "stl_min_z": 0.0
+    }
+  },
+  "assembly_intersections_mm3": {
+    "0-1": 0,
+    "0-2": 0,
+    "0-3": 0,
+    "0-4": 0,
+    "1-2": 0,
+    "1-3": 0,
+    "1-4": 0,
+    "2-3": 0,
+    "2-4": 0,
+    "3-4": 0
+  },
+  "peg_vs_test_pin_2": {
+    "actual_volume": 185.51837657733566,
+    "expected_volume": 185.51837657733566,
+    "difference_volume": 0
+  },
+  "height": {
+    "tray_top": 64.1,
+    "lower_egg_ceiling": 52.099999999999994,
+    "peg_top": 58.099999999999994,
+    "socket_roof": 58.599999999999994
+  },
+  "socket_roof_nominal_material_to_top": 5.5
+}

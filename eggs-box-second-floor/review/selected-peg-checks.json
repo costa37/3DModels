@@ -1,0 +1,12 @@
+{
+  "selected_gauge": 2,
+  "peg_diameter_mm": 6.3,
+  "straight_engagement_mm": 5.600000000000001,
+  "tapered_lead_mm": 0.4,
+  "total_engagement_mm": 6,
+  "shoulder_elevation_mm": 52.099999999999994,
+  "socket_diameter_mm": 6.4,
+  "nominal_diametral_clearance_mm": 0.10000000000000053,
+  "end_clearance_mm": 0.5,
+  "tray_leg_intersection_mm3": 0
+}

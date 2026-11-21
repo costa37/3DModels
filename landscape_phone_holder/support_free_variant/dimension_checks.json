@@ -1,0 +1,45 @@
+{
+  "body_solids": 1,
+  "body_valid": true,
+  "body_volume_mm3": 484925.47583646234,
+  "print_size_mm": [
+    76.00000000000006,
+    82.06841933189203,
+    238.00000000000006
+  ],
+  "print_min_z": -1.5960224702759634e-14,
+  "shelf_length_mm": 238.0,
+  "channel_mm": 17.999999999999996,
+  "lip_mm": 3.0000000000000044,
+  "tilt_deg": 9.999999999999975,
+  "rear_shelf_height_mm": -65.0,
+  "clamp_spacing_mm": 190.0,
+  "phone_overlap_mm3": 0,
+  "table_overlap_mm3": 0,
+  "parts": {
+    "body_print": {
+      "solids": 1,
+      "valid": true,
+      "volume_mm3": 484925.4758364624
+    },
+    "screw": {
+      "solids": 1,
+      "valid": true,
+      "volume_mm3": 9496.456174788393
+    },
+    "nut": {
+      "solids": 1,
+      "valid": true,
+      "volume_mm3": 5433.789396601742
+    },
+    "pad_print": {
+      "solids": 1,
+      "valid": true,
+      "volume_mm3": 1693.2650332097876
+    }
+  },
+  "left_downward_0p1mm_interference_mm3": 36.960000000000534,
+  "right_downward_0p1mm_interference_mm3": 36.960000000000534,
+  "screw_midsection_area_mm2": 127.23283718519778,
+  "screw_plain_core_area_mm2": 113.09733552923255
+}

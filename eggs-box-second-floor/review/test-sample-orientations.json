@@ -1,0 +1,50 @@
+{
+  "file": "eggs-box-second-floor/test_sample.stl",
+  "scale": {
+    "bbox_diagonal_mm": 120.4658,
+    "units_suspect": false,
+    "note": "bbox consistent with millimetre units"
+  },
+  "orientations": {
+    "angle_limit_used_deg": 45.0,
+    "pct_denominator": "total surface area",
+    "candidates": [
+      {
+        "orientation": "current_plus_z",
+        "support_area_mm2": 32.12,
+        "support_area_pct": 0.2,
+        "build_height_mm": 12.0
+      },
+      {
+        "orientation": "flip_180_x",
+        "support_area_mm2": 3591.31,
+        "support_area_pct": 23.1,
+        "build_height_mm": 12.0
+      },
+      {
+        "orientation": "rot_plus_90_x",
+        "support_area_mm2": 33.18,
+        "support_area_pct": 0.2,
+        "build_height_mm": 52.0
+      },
+      {
+        "orientation": "rot_minus_90_x",
+        "support_area_mm2": 80.23,
+        "support_area_pct": 0.5,
+        "build_height_mm": 52.0
+      },
+      {
+        "orientation": "rot_plus_90_y",
+        "support_area_mm2": 31.1,
+        "support_area_pct": 0.2,
+        "build_height_mm": 108.0
+      },
+      {
+        "orientation": "rot_minus_90_y",
+        "support_area_mm2": 33.18,
+        "support_area_pct": 0.2,
+        "build_height_mm": 108.0
+      }
+    ]
+  }
+}

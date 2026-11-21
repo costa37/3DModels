@@ -1,0 +1,11 @@
+{
+ "input":"landscape_phone_holder/phone_holder.step.py",
+ "mode":"view",
+ "outputs":[
+  {"path":"/Users/costa/Downloads/GitHub/3DModels/landscape_phone_holder/preview.png","camera":{"direction":[1,1,0.7]}},
+  {"path":"/Users/costa/Downloads/GitHub/3DModels/landscape_phone_holder/rear.png","camera":{"direction":[-1,-1,-0.6]}},
+  {"path":"/Users/costa/Downloads/GitHub/3DModels/landscape_phone_holder/top.png","camera":"top"},
+  {"path":"/Users/costa/Downloads/GitHub/3DModels/landscape_phone_holder/side.png","camera":"right"}
+ ],
+ "render":{"viewLabels":true,"padding":0.12,"sizeProfile":"diagnostic"}
+}

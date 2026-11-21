@@ -1,0 +1,50 @@
+{
+  "file": "landscape_phone_holder/holder_body.stl",
+  "scale": {
+    "bbox_diagonal_mm": 260.588,
+    "units_suspect": false,
+    "note": "bbox consistent with millimetre units"
+  },
+  "orientations": {
+    "angle_limit_used_deg": 45.0,
+    "pct_denominator": "total surface area",
+    "candidates": [
+      {
+        "orientation": "current_plus_z",
+        "support_area_mm2": 7037.22,
+        "support_area_pct": 11.2,
+        "build_height_mm": 76.0
+      },
+      {
+        "orientation": "flip_180_x",
+        "support_area_mm2": 5502.1,
+        "support_area_pct": 8.8,
+        "build_height_mm": 76.0
+      },
+      {
+        "orientation": "rot_plus_90_x",
+        "support_area_mm2": 18089.64,
+        "support_area_pct": 28.9,
+        "build_height_mm": 74.07
+      },
+      {
+        "orientation": "rot_minus_90_x",
+        "support_area_mm2": 18939.07,
+        "support_area_pct": 30.2,
+        "build_height_mm": 74.07
+      },
+      {
+        "orientation": "rot_plus_90_y",
+        "support_area_mm2": 1172.43,
+        "support_area_pct": 1.9,
+        "build_height_mm": 238.0
+      },
+      {
+        "orientation": "rot_minus_90_y",
+        "support_area_mm2": 1175.29,
+        "support_area_pct": 1.9,
+        "build_height_mm": 238.0
+      }
+    ]
+  }
+}

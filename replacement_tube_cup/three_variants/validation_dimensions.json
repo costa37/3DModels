@@ -1,0 +1,68 @@
+[
+  {
+    "model": 1,
+    "bounds_mm": [
+      33.100000200000004,
+      33.100000200000004,
+      16.2000002
+    ],
+    "solids": 1,
+    "volume_mm3": 4213.279399855385,
+    "topology_and_BOP_valid": true,
+    "groove_and_ridge_checks": true,
+    "female_minor_diameter_mm": 13.0,
+    "female_groove_major_diameter_mm": 14.4,
+    "pitch_mm": 2.1,
+    "root_axial_width_mm": 0.5,
+    "lead_in_mm": 0.4,
+    "number_marking_depth_mm": 0.35,
+    "remaining_wall_at_marking_mm": 0.85,
+    "marking_floor_faces": 1,
+    "boss_min_wall_at_thread_root_mm": 1.05,
+    "physical_fit_verified": false
+  },
+  {
+    "model": 2,
+    "bounds_mm": [
+      33.100000200000004,
+      33.10000020012844,
+      16.2000002
+    ],
+    "solids": 1,
+    "volume_mm3": 4177.5670575178665,
+    "topology_and_BOP_valid": true,
+    "groove_and_ridge_checks": true,
+    "female_minor_diameter_mm": 13.2,
+    "female_groove_major_diameter_mm": 14.6,
+    "pitch_mm": 2.1,
+    "root_axial_width_mm": 0.6,
+    "lead_in_mm": 0.5,
+    "number_marking_depth_mm": 0.35,
+    "remaining_wall_at_marking_mm": 0.85,
+    "marking_floor_faces": 1,
+    "boss_min_wall_at_thread_root_mm": 0.95,
+    "physical_fit_verified": false
+  },
+  {
+    "model": 3,
+    "bounds_mm": [
+      33.100000200000004,
+      33.100000203064994,
+      16.2000002
+    ],
+    "solids": 1,
+    "volume_mm3": 4141.868117682501,
+    "topology_and_BOP_valid": true,
+    "groove_and_ridge_checks": true,
+    "female_minor_diameter_mm": 13.4,
+    "female_groove_major_diameter_mm": 14.8,
+    "pitch_mm": 2.1,
+    "root_axial_width_mm": 0.7,
+    "lead_in_mm": 0.6,
+    "number_marking_depth_mm": 0.35,
+    "remaining_wall_at_marking_mm": 0.85,
+    "marking_floor_faces": 1,
+    "boss_min_wall_at_thread_root_mm": 0.85,
+    "physical_fit_verified": false
+  }
+]
